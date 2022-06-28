@@ -1,0 +1,13 @@
+node_modules/
+**/node_modules
+
+dist/
+**/dist/**
+
+.next/
+next-env.d.ts
+**/.next/**
+**/_next/**
+*.lock
+*.log
+yarn.lock

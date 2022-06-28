@@ -1,0 +1,9 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+yarn commitlint --edit || (
+  echo "❌ Commitlint checks failed"
+  exit 1
+)
+
+echo '✅ Commitlint passed!'

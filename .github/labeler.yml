@@ -1,0 +1,16 @@
+# Add 'chore' label to any root file changes
+chore:
+  - '*'
+
+'chore:pages':
+  - src/pages/**/*
+
+source:
+  - src/*
+
+'styles:global':
+  - any: ['src/styles/**/*.scss', 'src/styles/*.scss']
+
+test:
+  - src/**/*.test.js
+  - src/**/*.test.ts

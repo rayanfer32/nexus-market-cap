@@ -1,0 +1,43 @@
+{
+  "name": "next-template-typscript",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "tsc --pretty --noEmit && prettier --write .",
+    "format:check": "prettier --check .",
+    "format:types": "tsc --pretty --noEmit",
+    "clean": "rimraf .next && rimraf dist",
+    "clean:cache": "rimraf .next",
+    "clean:deep": "rimraf .next && rimraf dist && rimraf node_modules",
+    "pre-commit": "yarn format && yarn lint --fix && git add -A .",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "next": "12.1.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@types/node": "17.0.21",
+    "@types/react": "17.0.40",
+    "eslint": "8.11.0",
+    "eslint-config-next": "12.1.0",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^7.0.0",
+    "prettier": "^2.6.0",
+    "rimraf": "^3.0.2",
+    "sass": "^1.49.9",
+    "typescript": "4.6.2"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
