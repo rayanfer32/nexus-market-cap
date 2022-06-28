@@ -1,0 +1,21 @@
+.container {
+  overflow: scroll;
+}
+
+.thead {
+  // "h-10 shadow-sm"
+  height: 10px;
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.tr {
+  // "h-10 shadow-sm font-medium"
+  height: 10px;
+  font-weight: 500;
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.tbody {
+  // "text-center"
+  text-align: center;
+}

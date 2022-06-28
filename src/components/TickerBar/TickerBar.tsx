@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './TickerBar.module.css'
+import styles from './TickerBar.module.scss'
 
 export default function TickerBar() {
   return (

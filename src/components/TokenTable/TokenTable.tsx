@@ -1,11 +1,12 @@
 import React from 'react'
+import styles from './TokenTable.module.scss'
 
 export default function TokenTable() {
   return (
-    <div className="overflow-scroll">
+    <div className={styles.container}>
       <ActionBar />
-      <table className="overflow-scroll">
-        <thead className="h-10 shadow-sm">
+      <table className={styles.table}>
+        <thead className={styles.thead}>
           <tr>
             <th>#</th>
             <th>Token</th>
@@ -18,16 +19,16 @@ export default function TokenTable() {
           </tr>
         </thead>
 
-        <tbody className="text-center">
+        <tbody className={styles.tbody}>
           {Array(10)
             .fill(0)
             .map((item, index) => (
-              <tr key={index} className="h-10 shadow-sm font-medium">
+              <tr key={index} className={styles.tr}>
                 <td>{index + 1}</td>
                 <td>VIE</td>
                 <td>3.2$</td>
                 <td>+32.5%</td>
-                <td className="text-lime-700">+21.2%</td>
+                <td>+21.2%</td>
                 <td>50,000,000</td>
                 <td>520,000</td>
                 <td>6,565</td>
