@@ -1,3 +1,5 @@
+@use '@styles/_variables' as *;
+
 .container {
   overflow: scroll;
 }
@@ -10,7 +12,7 @@
 
 .tr {
   // "h-10 shadow-sm font-medium"
-  height: 10px;
+  height: 2rem;
   font-weight: 500;
   box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.1);
 }
@@ -18,4 +20,23 @@
 .tbody {
   // "text-center"
   text-align: center;
+}
+
+.icon_container {
+  position: relative;
+}
+.icon_name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  font-family: Jomhuria;
+  color: #fff;
+}
+
+.token_container {
+  display: flex;
+  align-items: center;
+  gap: $space-xxs;
 }

@@ -1,7 +1,32 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect } from 'react'
+import { useQuery } from 'react-query'
+import { NEXUS_BASE_URL } from 'src/constants'
 import styles from './TokenTable.module.scss'
+import nexusTokenBgDark from '../../assets/icons/nexusTokenBgDark.svg'
+import Image from 'next/image'
+interface tokenData {
+  token: string
+  ticker: string
+  maxsupply: number
+  currentSupply: number
+  owner: string
+  decimals: number
+  balance: number
+}
 
 export default function TokenTable() {
+  const tokensRQ = useQuery(['tokens'], async () => {
+    const data = (await axios.get(
+      `${NEXUS_BASE_URL}/register/list/tokens?sort=maxsupply&limit=1000`
+    )) as any
+    return data.data.result as tokenData[]
+  })
+
+  useEffect(() => {
+    console.log(tokensRQ.data)
+  }, [tokensRQ.data])
+
   return (
     <div className={styles.container}>
       <ActionBar />
@@ -20,24 +45,48 @@ export default function TokenTable() {
         </thead>
 
         <tbody className={styles.tbody}>
-          {Array(10)
-            .fill(0)
-            .map((item, index) => (
-              <tr key={index} className={styles.tr}>
-                <td>{index + 1}</td>
-                <td>VIE</td>
-                <td>3.2$</td>
-                <td>+32.5%</td>
-                <td>+21.2%</td>
-                <td>50,000,000</td>
-                <td>520,000</td>
-                <td>6,565</td>
-              </tr>
-            ))}
+          {tokensRQ.data?.map((item, index) => (
+            <tr key={index} className={styles.tr}>
+              <td>{index + 1}</td>
+              <td>
+                {item?.ticker
+                  ? makeIcon(removeLocalTag(item.ticker))
+                  : item.token.substring(0, 10)}
+                {/* {removeLocalTag(item.ticker)} */}
+              </td>
+              <td>3.2$</td>
+              <td>+32.5%</td>
+              <td>+21.2%</td>
+              <td>{item.maxsupply}</td>
+              <td>{item.currentSupply}</td>
+              <td>{item.balance}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
   )
+}
+
+function makeIcon(name: string): React.ReactElement {
+  return (
+    <div className={styles.token_container}>
+      <div className={styles.icon_container}>
+        <Image
+          height={40}
+          width={40}
+          src={nexusTokenBgDark}
+          alt="token-logo"
+        ></Image>
+        <div className={styles.icon_name}>{name?.substring(0, 2)}</div>
+      </div>
+      <span>{name}</span>
+    </div>
+  )
+}
+
+function removeLocalTag(name: string) {
+  return name?.replace('local:', '')
 }
 
 function ActionBar() {
