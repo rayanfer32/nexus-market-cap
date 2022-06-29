@@ -18,11 +18,10 @@
     "paths": {
       "@": ["src"],
       "@assets/*": ["src/assets/*"],
-      "@common/*": ["src/common/*"],
+      "@icons/*": ["src/assets/icons/*"],
       "@components/*": ["src/components/*"],
-      "@context/*": ["src/context/*"],
-      "@layout/*": ["src/layout/*"],
       "@pages/*": ["src/pages/*"],
+      "@store/*": ["src/store/*"],
       "@styles/*": ["src/styles/*"],
       "@utils/*": ["src/utils/*"]
     },
