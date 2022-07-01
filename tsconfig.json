@@ -31,6 +31,12 @@
     "pretty": true,
     "sourceMap": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "dist", ".next", "next.config.js"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "dangerfile.ts"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".next",
+    "next.config.js",
+    "dangerfile.ts"
+  ]
 }
