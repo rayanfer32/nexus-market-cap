@@ -1,0 +1,13 @@
+::-webkit-scrollbar {
+  height: var(--scrollbar-size, 2vh);
+  width: var(--scrollbar-size, 2vh);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track, #e3e7eb);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb, #a6a6a6);
+  border-radius: var(--scrollbar-radius, 2vh);
+}

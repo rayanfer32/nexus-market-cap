@@ -11,7 +11,7 @@ function Header() {
       <nav className={styles.nav}>
         <div className={styles.logo}>
           <Image src={NexusBlueSvg} width={32} height={32} alt="logo" />
-          <p className="text-l font-bold">NexusMarketCap</p>
+          <p className={styles.title}>NexusMarketCap</p>
         </div>
 
         <div className={styles.nav_buttons}>
