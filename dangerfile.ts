@@ -49,7 +49,9 @@ if (pr.base.ref == 'develop') {
       pr.head.ref +
       ',' +
       `<img src="${pr.head.user.avatar_url}">` +
-      pr.head.user.id
+      pr.head.user.type +
+      '***' +
+      `<img src="${pr.assignee.avatar_url}">`
   )
 }
 
