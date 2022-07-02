@@ -35,13 +35,20 @@ if (modified_files.length > 0) {
 }
 
 if (pr.base.ref === 'main') {
-  fail('Please specify branch to continue with PR - ', pr.base.ref)
+  fail('Please specify branch to continue with PR - ' + pr.base.ref)
 }
 if (pr.base.ref == 'develop') {
-  fail('develop branch - ', pr.base.ref)
+  fail(
+    'develop branch - ' +
+      pr.base.ref +
+      '\n================================' +
+      pr.changed_files +
+      '================================' +
+      pr.head
+  )
 }
 
-if (modified_files.length > 20) {
+if (pr.changed_files > 20) {
   // check branch is raise to main
   warn(
     'This PR has a lot of changes. Please make sure you have a good reason to do this.'
