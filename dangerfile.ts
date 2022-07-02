@@ -1,4 +1,4 @@
-import { danger, message, warn } from 'danger'
+import { danger, fail, message, warn } from 'danger'
 
 // Setup
 const pr = danger.github.pr
@@ -16,7 +16,7 @@ if (packageChanged && !lockfileChanged) {
 
 // Always ensure we assign someone.
 if (pr.assignee === null) {
-  message(
+  warn(
     'Please assign someone to merge this PR, and optionally include people who should review.'
   )
 }
@@ -29,11 +29,25 @@ if (pr.base.repo.full_name !== pr.head.repo.full_name) {
 }
 
 const modifiedMD = modified_files.join(' </li><li> ')
+
 if (modified_files.length > 0) {
-  message('Changed Files in this PR: \n - <ol><li>' + modifiedMD + '</li></ol>')
+  message('Changed Files in this PR: \n <ol><li>' + modifiedMD + '</li></ol>')
 }
+
 if (modified_files.length > 20) {
+  // check branch is raise to main
+  if (pr.base.ref !== 'main') {
+    fail('Please specify branch to continue with PR - ', pr.base.ref)
+  }
   warn(
     'This PR has a lot of changes. Please make sure you have a good reason to do this.'
   )
+}
+
+if (pr.title.length < 10) {
+  fail('Please add a title to this PR')
+}
+
+if (pr.body.length < 100) {
+  warn('Please add a description to this PR/ description is too short')
 }
