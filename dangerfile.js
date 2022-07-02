@@ -28,11 +28,11 @@ if (pr.base.repo.full_name !== pr.head.repo.full_name) {
   )
 }
 
-const modifiedMD = modified_files.join('\n - ')
+const modifiedMD = modified_files.join(' </li><li> ')
 if (modified_files.length > 0) {
-  message('Changed Files in this PR: - ' + modifiedMD)
+  message('Changed Files in this PR: \n - <ol><li>' + modifiedMD + '</li></ol>')
 }
-if (modified_files.length > 2) {
+if (modified_files.length > 20) {
   warn(
     'This PR has a lot of changes. Please make sure you have a good reason to do this.'
   )
