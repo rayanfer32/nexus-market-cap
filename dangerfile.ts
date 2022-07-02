@@ -1,5 +1,4 @@
-import { danger, message, warn } from 'danger'
-import * as pullRequest from 'danger-plugin-pull-request'
+import { danger, fail, message, warn } from 'danger'
 
 // Setup
 const pr = danger.github.pr
@@ -17,7 +16,7 @@ if (packageChanged && !lockfileChanged) {
 
 // Always ensure we assign someone.
 if (pr.assignee === null) {
-  message(
+  warn(
     'Please assign someone to merge this PR, and optionally include people who should review.'
   )
 }
@@ -29,18 +28,29 @@ if (pr.base.repo.full_name !== pr.head.repo.full_name) {
   )
 }
 
-pullRequest.checkDescription(
-  1000,
-  message('Please provide a description of the changes in your pull request.')
-)
+const modifiedMD = modified_files.join(' </li><li> ')
 
-pullRequest.checkTitle(
-  /^\[[A-Za-z]+-\d+\]/,
-  'Please provide a title in the format [type: pull-request-title]. Example: fix:<title of PR>',
-  warn('Please provide a title for pr')
-)
+if (modified_files.length > 0) {
+  message('Changed Files in this PR: \n <ol><li>' + modifiedMD + '</li></ol>')
+}
 
-pullRequest.checkPRSize(
-  100,
-  message('Please make sure your PR is less than 50 files.')
-)
+// Ensure title is present
+if (pr.title.length < 10) {
+  fail('Please add a title to this PR')
+}
+
+// Ensure body is not empty and has min 100 charectors
+if (pr.body.length < 100) {
+  warn('Please add a description to this PR/ description is too short')
+}
+
+// Ensure PR is not soo big
+if (
+  pr.changed_files > 10 &&
+  pr.base.ref !== 'main' &&
+  pr.base.ref === 'develop'
+) {
+  warn(
+    'This PR has a lot of changes. Please make sure you have a good reason to do this.'
+  )
+}
