@@ -31,12 +31,12 @@
     "pretty": true,
     "sourceMap": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "dangerfile.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "dangerfile.js"],
   "exclude": [
     "node_modules",
     "dist",
     ".next",
     "next.config.js",
-    "dangerfile.ts"
+    "dangerfile.js"
   ]
 }
