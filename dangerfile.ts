@@ -37,6 +37,10 @@ if (modified_files.length > 0) {
 if (pr.base.ref !== 'main') {
   fail('Please specify branch to continue with PR - ', pr.base.ref)
 }
+if (pr.base.ref == 'develop') {
+  fail('develop branch - ', pr.base.ref)
+}
+
 if (modified_files.length > 20) {
   // check branch is raise to main
   warn(
