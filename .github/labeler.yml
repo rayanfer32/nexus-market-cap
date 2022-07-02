@@ -11,6 +11,16 @@ source:
 'styles:global':
   - any: ['src/styles/**/*.scss', 'src/styles/*.scss']
 
+'styles':
+  - any: ['sr/components/**/*.scss', 'src/pages/**/*.scss']
+
+'assests':
+  - any: ['src/assests/**/*']
+
+workflow:
+  - any:
+      ['.github/**/*', '.husky/**/*', '.vscode/**/*', '.github/workflow/**/*']
+
 test:
   - src/**/*.test.js
   - src/**/*.test.ts
