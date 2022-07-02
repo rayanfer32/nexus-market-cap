@@ -48,10 +48,9 @@ if (pr.base.ref == 'develop') {
       ',' +
       pr.head.ref +
       ',' +
-      `<img src="${pr.head.user.avatar_url}">` +
-      pr.head.user.type +
+      danger.git.base +
       '***' +
-      `<img src="${pr.assignee.avatar_url}">`
+      danger.github.thisPR.owner
   )
 }
 
