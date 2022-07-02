@@ -1,9 +1,4 @@
 import { danger, message, warn } from 'danger'
-import {
-  checkDescription,
-  checkPRSize,
-  checkTitle,
-} from 'danger-plugin-pull-request'
 
 // Setup
 const pr = danger.github.pr
@@ -33,12 +28,12 @@ if (pr.base.repo.full_name !== pr.head.repo.full_name) {
   )
 }
 
-checkDescription(1000, message)
-
-checkTitle(
-  /^\[[A-Za-z]+-\d+\]/,
-  'Please provide a title in the format [type: pull-request-title]. Example: fix:<title of PR>',
-  warn
-)
-
-checkPRSize(100, message)
+const modifiedMD = modified_files.join('\n - ')
+if (modified_files.length > 0) {
+  message('Changed Files in this PR: - ' + modifiedMD)
+}
+if (modified_files.length > 2) {
+  warn(
+    'This PR has a lot of changes. Please make sure you have a good reason to do this.'
+  )
+}
