@@ -44,7 +44,11 @@ if (pr.base.ref == 'develop') {
       '\n================================' +
       pr.changed_files +
       '================================' +
-      pr.head
+      pr.head.label +
+      ',' +
+      pr.head.ref +
+      ',' +
+      pr.head.user
   )
 }
 
