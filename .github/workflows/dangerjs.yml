@@ -1,0 +1,15 @@
+name: Danger JS
+on: [pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use NodeJS 14
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Run Danger JS
+        run: npx danger ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
