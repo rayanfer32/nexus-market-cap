@@ -12,6 +12,6 @@ jobs:
           cache: 'yarn'
       - run: yarn install
       - name: Run Danger JS
-        run: npx danger ci
+        run: yarn danger ci
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
