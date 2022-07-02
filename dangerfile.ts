@@ -34,11 +34,11 @@ if (modified_files.length > 0) {
   message('Changed Files in this PR: \n <ol><li>' + modifiedMD + '</li></ol>')
 }
 
+if (pr.base.ref !== 'main') {
+  fail('Please specify branch to continue with PR - ', pr.base.ref)
+}
 if (modified_files.length > 20) {
   // check branch is raise to main
-  if (pr.base.ref !== 'main') {
-    fail('Please specify branch to continue with PR - ', pr.base.ref)
-  }
   warn(
     'This PR has a lot of changes. Please make sure you have a good reason to do this.'
   )
