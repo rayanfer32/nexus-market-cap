@@ -48,7 +48,8 @@ if (pr.base.ref == 'develop') {
       ',' +
       pr.head.ref +
       ',' +
-      pr.head.user
+      `<img src="${pr.head.user.avatar_url}">` +
+      pr.head.user.id
   )
 }
 
