@@ -16,14 +16,14 @@ if (packageChanged && !lockfileChanged) {
 
 // Always ensure we assign someone.
 if (pr.assignee === null) {
-  message(
+  warn(
     'Please assign someone to merge this PR, and optionally include people who should review.'
   )
 }
 
 // If it's not a branch PR
 if (pr.base.repo.full_name !== pr.head.repo.full_name) {
-  message(
+  warn(
     'This pull request(PR) comes from a fork. This has to be manually checked and merged.'
   )
 }
