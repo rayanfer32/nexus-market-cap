@@ -6,6 +6,7 @@
   background-color: var(--theme-ticker-bar-background);
   white-space: nowrap;
   overflow: auto hidden;
+  justify-content: space-around;
 }
 
 .container::-webkit-scrollbar {
