@@ -1,0 +1,18 @@
+@use 'sass:map';
+
+// TODO: Add project theme colors here
+$theme-light: (
+  light: (
+    background: #ffffff,
+    text: #000000,
+  ),
+);
+
+$theme-dark: (
+  dark: (
+    background: #000000,
+    text: #ffffff,
+  ),
+);
+
+$theme: map-merge($theme-light, $theme-dark);
