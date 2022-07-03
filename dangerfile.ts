@@ -16,7 +16,7 @@ if (packageChanged && !lockfileChanged) {
 
 // Always ensure we assign someone.
 if (pr.assignee === null) {
-  warn(
+  message(
     'Please assign someone to merge this PR, and optionally include people who should review.'
   )
 }
