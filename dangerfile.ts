@@ -1,3 +1,4 @@
+// Import the feedback functions
 import { danger, fail, message, warn } from 'danger'
 
 // Setup
@@ -16,14 +17,14 @@ if (packageChanged && !lockfileChanged) {
 
 // Always ensure we assign someone.
 if (pr.assignee === null) {
-  warn(
+  message(
     'Please assign someone to merge this PR, and optionally include people who should review.'
   )
 }
 
 // If it's not a branch PR
 if (pr.base.repo.full_name !== pr.head.repo.full_name) {
-  warn(
+  message(
     'This pull request(PR) comes from a fork. This has to be manually checked and merged.'
   )
 }
