@@ -18,8 +18,7 @@
   border-radius: 0.25rem 0.25rem;
   justify-content: center;
   align-items: center;
-  // outline: 1px solid green;
-  min-width: 10rem;
+  min-width: 18rem;
 
   .card_title {
     font-weight: bold;
@@ -30,5 +29,16 @@
   }
   .card_body_desc {
     margin: 0.25rem;
+  }
+}
+
+// * mobile classes
+@media screen and (max-width: 425px) {
+  .container {
+    gap: 1rem;
+  }
+
+  .card {
+    min-width: 18rem;
   }
 }
