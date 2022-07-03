@@ -1,9 +1,9 @@
-@use '@styles/colors' as *;
+@use '@styles/index' as *;
 
 .container {
   display: flex;
   gap: 1rem;
-  background-color: var(--theme-ticker-bar-background);
+  background-color: var(--theme-ticker-bar-background, clr(grey-1));
   white-space: nowrap;
   overflow: auto hidden;
   justify-content: space-around;

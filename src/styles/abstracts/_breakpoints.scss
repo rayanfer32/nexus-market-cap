@@ -1,5 +1,14 @@
+@use 'sass:map';
+@use 'sass:string';
+
 $breakpoints: (
-  small: 30em,
-  medium: 45em,
-  large: 65em,
+  small: 768px,
+  medium: 1200px,
+  large: 1440px,
+);
+
+$media-expression: (
+  small: '(max-width: 768px)',
+  medium: '(max-width: 1200px)',
+  large: '(min-width: 1200px)',
 );

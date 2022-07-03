@@ -1,0 +1,28 @@
+@use 'sass:map';
+@use 'sass:string';
+@use '../abstracts' as *;
+@use '../functions' as *;
+@use '../mixins/mediaQuery' as *;
+
+/**
+  * Add colors to the DOM as CSS variables
+*/
+html {
+  @each $name, $value in $clr {
+    --#{$name}: #{$value};
+  }
+}
+
+/**
+  * If there is attribute [data-theme] on the body element, 
+  * then use the theme colors defined in the data-theme attribute.
+*/
+body {
+  @each $theme, $clr in $theme {
+    &[data-theme='#{string.quote($theme)}'] {
+      @each $name, $value in $clr {
+        --#{$name}: #{$value};
+      }
+    }
+  }
+}

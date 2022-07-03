@@ -1,0 +1,17 @@
+@use 'sass:map';
+@use 'sass:string';
+@use '../abstracts/breakpoints' as *;
+
+/// Media queries for screen sizes
+@mixin mq($device) {
+  $device-selected: map-get($media-expression, string.quote($device));
+
+  @if $device-selected != null {
+    @media screen and #{$device-selected} {
+      @content;
+    }
+  } @else {
+    // device not in $media-expression
+    @content;
+  }
+}
