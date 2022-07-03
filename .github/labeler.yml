@@ -21,6 +21,9 @@ workflow:
   - any:
       ['.github/**/*', '.husky/**/*', '.vscode/**/*', '.github/workflow/**/*']
 
+utils:
+  - src/utils/**/*
+
 test:
   - src/**/*.test.js
   - src/**/*.test.ts
