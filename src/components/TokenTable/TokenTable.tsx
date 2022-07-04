@@ -57,7 +57,7 @@ export default function TokenTable() {
               <td>{index + 1}</td>
               <td>
                 {item?.ticker ? (
-                  makeIcon(removeLocalTag(item.ticker.substring(0, 10)))
+                  makeIcon(removeLocalTag(item.ticker))
                 ) : (
                   <div className={styles.token_name}>
                     {item.token.substring(0, 10)}
