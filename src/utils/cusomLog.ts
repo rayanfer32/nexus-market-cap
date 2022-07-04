@@ -4,34 +4,44 @@ import { isDev } from './getEnv'
 
 /**
  * Log to console if in dev.
- * Add // @ts-ignore while using this function
  */
-const Logger = (function () {
-  const isShow = isDev || false
-  const _env = isDev ? '__DEV__' : ''
-  const _style = `color:${CONSTANTS.COLOR.WHITE};font-weight:800;padding: 0.2rem 0.4rem;border-radius: 0.25rem;margin-right: 0.5rem;`
-  const _infoStyle = `background: ${CONSTANTS.COLOR.NEXUS_BLUE}; ${_style}`
-  const _warnStyle = `background: ${CONSTANTS.COLOR.FULVOUS}; ${_style}`
-  const _errorStyle = `background: ${CONSTANTS.COLOR.MAXIMUM_RED}; ${_style}`
+export class Logger {
+  static #isShow = isDev || false
+  static #env = isDev ? '__DEV__' : ''
+  static #style = `color:${CONSTANTS.COLOR.WHITE};padding:2px;border-radius:4px;margin-right:4px;`
+  static #infoStyle = `background:${CONSTANTS.COLOR.NEXUS_BLUE}; ${this.#style}`
+  static #warnStyle = `background:${CONSTANTS.COLOR.FULVOUS};${this.#style}`
+  static #errorStyle = `background:${CONSTANTS.COLOR.MAXIMUM_RED};${
+    this.#style
+  }`
 
-  return {
-    log: function () {
-      const args = Array.prototype.slice.call(arguments)
-      isShow && console.log.apply(console, [`%c${_env}`, _infoStyle, ...args])
-    },
-
-    warn: function () {
-      const args = Array.prototype.slice.call(arguments)
-      isShow && console.warn.apply(console, [`%c${_env}`, _warnStyle, ...args])
-    },
-
-    error: function () {
-      const args = Array.prototype.slice.call(arguments)
-      isShow &&
-        console.error.apply(console, [`%c${_env}`, _errorStyle, ...args])
-    },
+  static log(...data: any[]): void {
+    Logger.#isShow &&
+      console.log.apply(console, [
+        `%c${Logger.#env}`,
+        Logger.#infoStyle,
+        ...data,
+      ])
   }
-})()
+
+  static warn(...data: any[]): void {
+    Logger.#isShow &&
+      console.log.apply(console, [
+        `%c${Logger.#env}`,
+        Logger.#warnStyle,
+        ...data,
+      ])
+  }
+
+  static error(...data: any[]): void {
+    Logger.#isShow &&
+      console.log.apply(console, [
+        `%c${Logger.#env}`,
+        Logger.#errorStyle,
+        ...data,
+      ])
+  }
+}
 
 export default Logger
 export const Log = Logger.log

@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { isDev } from '../utils/getEnv'
+import { isDev } from '@utils/getEnv'
 
 export const store = configureStore({
   reducer: {},

@@ -1,8 +1,9 @@
 import '@styles/globals.scss'
+import { Log } from '@utils/cusomLog'
 import type { AppProps, NextWebVitalsMetric } from 'next/app'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { Provider } from 'react-redux'
-import { store } from '../store/store'
+import { store } from '@store/store'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const queryClient = new QueryClient()
@@ -17,8 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 }
 
 export function reportWebVitals(metric: NextWebVitalsMetric) {
-  // eslint-disable-next-line no-console
-  console.log(metric)
+  Log(metric)
 }
 
 export default MyApp

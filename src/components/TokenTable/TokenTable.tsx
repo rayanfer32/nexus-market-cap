@@ -3,7 +3,8 @@ import React, { useEffect } from 'react'
 import { useQuery } from 'react-query'
 import { NEXUS_BASE_URL } from 'src/constants'
 import styles from './TokenTable.module.scss'
-import nexusTokenBgLight from '../../assets/icons/TokenIconType1.svg'
+import nexusTokenBgLight from '@assets/icons/TokenIconType1.svg'
+import { Log } from '@utils/cusomLog'
 // import tokenbgLight from '@assets/icons/tokenbgLight.svg'
 
 import Image from 'next/image'
@@ -26,7 +27,7 @@ export default function TokenTable() {
   })
 
   useEffect(() => {
-    console.log(tokensRQ.data)
+    Log(tokensRQ.data)
   }, [tokensRQ.data])
 
   return (
