@@ -1,4 +1,4 @@
-@use '@styles/_variables' as *;
+@use '@styles/index' as *;
 
 .container {
   overflow: scroll;
@@ -25,6 +25,7 @@
 .icon_container {
   position: relative;
 }
+
 .icon_name {
   position: absolute;
   top: 50%;
@@ -32,7 +33,8 @@
   transform: translate(-50%, -50%);
   font-size: 2rem;
   font-family: Jomhuria;
-  color: #fff;
+  color: #123;
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.1));
 }
 
 .token_container {

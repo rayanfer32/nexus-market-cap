@@ -1,9 +1,12 @@
+@use '@styles/index' as *;
+
 .container {
   display: flex;
   gap: 1rem;
-  background-color: #fee;
+  background-color: var(--theme-ticker-bar-background, clr(grey-1));
   white-space: nowrap;
   overflow: auto hidden;
+  justify-content: space-around;
 }
 
 .container::-webkit-scrollbar {
