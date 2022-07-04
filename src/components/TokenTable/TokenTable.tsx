@@ -3,7 +3,9 @@ import React, { useEffect } from 'react'
 import { useQuery } from 'react-query'
 import { NEXUS_BASE_URL } from 'src/constants'
 import styles from './TokenTable.module.scss'
-import nexusTokenBgDark from '../../assets/icons/nexusTokenBgDark.svg'
+import nexusTokenBgLight from '../../assets/icons/TokenIconType1.svg'
+// import tokenbgLight from '@assets/icons/tokenbgLight.svg'
+
 import Image from 'next/image'
 interface tokenData {
   token: string
@@ -75,7 +77,7 @@ function makeIcon(name: string): React.ReactElement {
         <Image
           height={40}
           width={40}
-          src={nexusTokenBgDark}
+          src={nexusTokenBgLight}
           alt="token-logo"
         ></Image>
         <div className={styles.icon_name}>{name?.substring(0, 2)}</div>
