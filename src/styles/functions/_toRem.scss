@@ -1,0 +1,11 @@
+@use 'sass:math';
+
+// This is the default html and body font-size for the base rem value.
+$rem-base: 16px !default;
+
+// convert px to rem using scss function
+@function toRem($pxValue, $base-value: $rem-base) {
+  @return math.div($pxValue, $base-value) * 1rem;
+}
+
+/* refrence: https://gist.github.com/elvism16/f72127086960775a06a6bad36f61ab23 */

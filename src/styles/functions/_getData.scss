@@ -1,0 +1,28 @@
+@use 'sass:map';
+@use '../abstracts' as *;
+
+/**
+ function to get sass color variables
+ eg: color: clr(nexusBlue);
+ */
+@function clr($value) {
+  @return map.get($clr, $value);
+}
+
+/**
+ function to get sass font size variables 
+ eg: font-size: font-size(m);
+ */
+@function font-size($value) {
+  $fontSize: map.get($font, size);
+  @return map.get($fontSize, $value);
+}
+
+/**
+ function to get sass font size variables 
+ eg: font-weight: font-weight(bold);
+ */
+@function font-weight($value) {
+  $fontSize: map.get($font, weight);
+  @return map.get($fontSize, $value);
+}
