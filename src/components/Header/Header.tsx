@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import NexusBlueSvg from '../../assets/icons/nexusBlue.svg'
+import NexusBlueSvg from '@assets/icons/nexusBlue.svg'
 import { BiMenu, BiSearch } from 'react-icons/bi'
 import { IconContext } from 'react-icons'
 import styles from './Header.module.scss'
