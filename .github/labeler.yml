@@ -27,3 +27,12 @@ utils:
 test:
   - src/**/*.test.js
   - src/**/*.test.ts
+  - src/**/*.spec.js
+  - pr:
+      title:
+        - 'test:*'
+      body:
+        - any: ['*test*']
+  - commits:
+      title:
+        - 'test:*'
