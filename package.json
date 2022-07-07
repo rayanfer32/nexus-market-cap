@@ -15,7 +15,8 @@
     "clean:cache": "rimraf .next",
     "clean:deep": "rimraf .next && rimraf dist && rimraf node_modules",
     "pre-commit": "yarn format && yarn lint --fix && git add -A .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "overrideChangelog": "gren changelog --override"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.2",
