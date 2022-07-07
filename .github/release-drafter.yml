@@ -1,0 +1,11 @@
+autolabeler:
+  - label: 'bug'
+    branch:
+      - '/fix\/.+/'
+    title:
+      - '/fix/i'
+  - label: 'feat'
+    branch:
+      - '/feat\/.+/'
+    body:
+      - '/\/issues\//'
