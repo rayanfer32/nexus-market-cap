@@ -47,11 +47,11 @@ autolabeler:
     branch:
       - '/fix\/.+/'
     title:
-      - '/fix:/i'
+      - '/fix/i'
 
   - label: 'feat'
     title:
-      - '/feat:/i'
+      - '/feat/i'
     branch:
       - '/feat\/.+/'
     body:
@@ -61,7 +61,7 @@ autolabeler:
     branch:
       - '/test\/.+/'
     title:
-      - '/test:/i'
+      - '/test/i'
 
   - label: 'refactor'
     branch:

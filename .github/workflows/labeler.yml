@@ -1,4 +1,4 @@
-name: 'Pull Request Labeler'
+name: 'Labeler'
 on: [pull_request_target]
 
 permissions:
@@ -14,11 +14,11 @@ jobs:
       - uses: actions/labeler@v4
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
-  pr-labeler:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: TimonVS/pr-labeler-action@v3
-        with:
-          configuration-path: .github/pr-labeler.yml # optional, .github/pr-labeler.yml is the default value
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  # pr-labeler:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: TimonVS/pr-labeler-action@v3
+  #       with:
+  #         configuration-path: .github/pr-labeler.yml # optional, .github/pr-labeler.yml is the default value
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
