@@ -57,6 +57,12 @@ autolabeler:
     body:
       - '/\/enhancement\//'
 
+  - label: 'test'
+    branch:
+      - '/test\/.+/'
+    title:
+      - '/test:/i'
+
   - label: 'refactor'
     branch:
       - '/refactor\/.+/'
