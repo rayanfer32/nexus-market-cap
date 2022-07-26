@@ -18,13 +18,13 @@
     "paths": {
       "@": ["src"],
       "@assets/*": ["src/assets/*"],
-      "@icons/*": ["src/assets/icons/*"],
       "@components/*": ["src/components/*"],
       "@constants/*": ["src/constants/*"],
       "@pages/*": ["src/pages/*"],
       "@store/*": ["src/store/*"],
       "@styles/*": ["src/styles/*"],
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "@views/*": ["src/views/*"]
     },
     "allowUnreachableCode": false,
     "declaration": true,
