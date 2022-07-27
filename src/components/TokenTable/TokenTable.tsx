@@ -6,7 +6,7 @@ import styles from './TokenTable.module.scss'
 import nexusTokenBgLight from '@assets/icons/TokenIconType1.svg'
 import { Log } from '@utils/cusomLog'
 import Image from 'next/image'
-
+import { Button } from '@components/common/Button'
 interface tokenDataType {
   id: number
   attributes: {
@@ -48,9 +48,12 @@ export default function TokenTable() {
           <tr>
             <th>#</th>
             <th>Token</th>
+
             <th>Price</th>
             <th>24h</th>
             <th>7D</th>
+            {/* <th>Volume(24h)</th> */}
+
             <th>MaxSupply</th>
             <th>CurrentSupply</th>
             {/* <th>Volume(24h)</th> */}
@@ -102,14 +105,14 @@ function makeIcon(name: string): React.ReactElement {
   )
 }
 
-function removeLocalTag(name: string) {
+function removeLocalTag(name: string): string {
   return name?.replace('local:', '')
 }
 
 function ActionBar() {
   return (
-    <div className="p-2">
-      <button className="btn btn-sm">lock</button>
+    <div className="">
+      <Button>Lock</Button>
     </div>
   )
 }
