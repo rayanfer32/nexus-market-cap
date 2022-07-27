@@ -1,0 +1,44 @@
+.menuPage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(#fff, 1);
+  border: 1px solid rgba(#fff, 1);
+  @supports (backdrop-filter: blur(0.5rem)) {
+    backdrop-filter: blur(0.5rem);
+    background-color: rgba(#fff, 0.8);
+  }
+}
+.show {
+  animation: slideInMenu 0.4s ease-in-out forwards;
+}
+.hide {
+  animation: slideOutMenu 0.4s ease-in-out forwards;
+}
+
+@keyframes slideInMenu {
+  0% {
+    display: block;
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutMenu {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    display: none;
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}

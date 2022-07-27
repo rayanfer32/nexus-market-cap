@@ -3,7 +3,8 @@ import { DevViewDebug } from '@views/DevView'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
 import { NextComponentType, NextPageContext } from 'next'
-import { ReactNode } from 'react'
+import React, { ReactNode } from 'react'
+import { MenuPage } from '@components/common/Menu'
 
 interface LayoutProps {
   children: ReactNode
@@ -15,6 +16,12 @@ interface LayoutProps {
 const Layout: NextComponentType<NextPageContext, {}, LayoutProps> = ({
   children,
 }: LayoutProps) => {
+  const [showMenu, setShowMenu] = React.useState(false)
+
+  const handleMenuClick = () => {
+    setShowMenu(!showMenu)
+  }
+
   return (
     <>
       {/* Need second opinion on section tag is it required or not */}
@@ -23,6 +30,7 @@ const Layout: NextComponentType<NextPageContext, {}, LayoutProps> = ({
         <main className={styles.container}>{children}</main>
         <Footer />
       </section>
+      <MenuPage show={showMenu} onClick={handleMenuClick} />
       <DevViewDebug />
     </>
   )
