@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { CONSTANTS } from '@constants/index'
+import color from '@constants/colors'
 import { isDev } from './getEnv'
 
 /**
@@ -8,12 +8,11 @@ import { isDev } from './getEnv'
 export class Logger {
   static #isShow = isDev || false
   static #env = isDev ? '__DEV__' : ''
-  static #style = `color:${CONSTANTS.COLOR.WHITE};padding:2px;border-radius:4px;margin-right:4px;`
-  static #infoStyle = `background:${CONSTANTS.COLOR.NEXUS_BLUE}; ${this.#style}`
-  static #warnStyle = `background:${CONSTANTS.COLOR.FULVOUS};${this.#style}`
-  static #errorStyle = `background:${CONSTANTS.COLOR.MAXIMUM_RED};${
-    this.#style
-  }`
+  static #style = `color:${color.WHITE};padding:2px;border-radius:4px;margin-right:4px;`
+  static #infoStyle = `background:${color.NEXUS_BLUE}; ${this.#style}`
+  static #warnStyle = `background:${color.FULVOUS};${this.#style}`
+  static #errorStyle = `background:${color.MAXIMUM_RED};${this.#style
+    }`
 
   static log(...data: any[]): void {
     Logger.#isShow &&

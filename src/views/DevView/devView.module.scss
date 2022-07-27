@@ -1,0 +1,20 @@
+.devMarquee {
+  text-align: center;
+  margin-block: 0.5rem;
+  background-color: #ddd;
+}
+
+.devChild {
+  padding-block: 0.5rem;
+  border-bottom: 1px solid hsla(0, 0%, 0%, 0.5);
+}
+
+.devDebug {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  opacity: 0.15;
+  &:hover {
+    opacity: 1;
+  }
+}
