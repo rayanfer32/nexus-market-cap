@@ -50,6 +50,14 @@ autolabeler:
     title:
       - '/fix/i'
 
+  - label: 'chore'
+    branch:
+      - '/chore\/.+/'
+      - '/ci\/.+/'
+    title:
+      - '/chore/i'
+      - '/ci/i'
+
   - label: 'feat'
     title:
       - '/feat/i'
