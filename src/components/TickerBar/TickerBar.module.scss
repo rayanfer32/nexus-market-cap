@@ -5,8 +5,11 @@
   gap: 1rem;
   background-color: var(--theme-ticker-bar-background, clr(grey-1));
   white-space: nowrap;
-  overflow: auto hidden;
-  justify-content: space-around;
+  overflow: auto;
+  justify-content: space-between;
+  padding: 0 1rem;
+  height: 2rem;
+  align-items: center;
 }
 
 .container::-webkit-scrollbar {

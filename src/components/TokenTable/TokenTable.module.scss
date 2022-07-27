@@ -1,7 +1,7 @@
 @use '@styles/index' as *;
 
 .container {
-  overflow: scroll;
+  overflow: auto;
 }
 
 .thead {
@@ -41,4 +41,9 @@
   display: flex;
   align-items: center;
   gap: $space-xxs;
+}
+
+.token_name {
+  text-align: left;
+  padding-left: $space-xs;
 }

@@ -8,11 +8,12 @@ import { Log } from '@utils/cusomLog'
 // import tokenbgLight from '@assets/icons/tokenbgLight.svg'
 
 import Image from 'next/image'
+import { Button } from '@components/common/Button'
 interface tokenData {
   token: string
   ticker: string
   maxsupply: number
-  currentSupply: number
+  currentsupply: number
   owner: string
   decimals: number
   balance: number
@@ -38,12 +39,16 @@ export default function TokenTable() {
           <tr>
             <th>#</th>
             <th>Token</th>
-            <th>Price</th>
-            <th>24h</th>
-            <th>7D</th>
+
+            {/* // ! no api support */}
+            {/* <th>Price</th> */}
+            {/* <th>24h</th> */}
+            {/* <th>7D</th> */}
+            {/* <th>Volume(24h)</th> */}
+
+            <th>Balance</th>
             <th>MaxSupply</th>
             <th>CurrentSupply</th>
-            <th>Volume(24h)</th>
           </tr>
         </thead>
 
@@ -52,17 +57,23 @@ export default function TokenTable() {
             <tr key={index} className={styles.tr}>
               <td>{index + 1}</td>
               <td>
-                {item?.ticker
-                  ? makeIcon(removeLocalTag(item.ticker))
-                  : item.token.substring(0, 10)}
+                {item?.ticker ? (
+                  makeIcon(removeLocalTag(item.ticker))
+                ) : (
+                  <div className={styles.token_name}>
+                    {item.token.substring(0, 10)}
+                  </div>
+                )}
                 {/* {removeLocalTag(item.ticker)} */}
               </td>
-              <td>3.2$</td>
-              <td>+32.5%</td>
-              <td>+21.2%</td>
+
+              {/* <td>3.2$</td> */}
+              {/* <td>+32.5%</td> */}
+              {/* <td>+21.2%</td> */}
+
+              <td>{item.balance.toFixed(1)}</td>
               <td>{item.maxsupply}</td>
-              <td>{item.currentSupply}</td>
-              <td>{item.balance}</td>
+              <td>{item.currentsupply.toFixed(1)}</td>
             </tr>
           ))}
         </tbody>
@@ -88,14 +99,14 @@ function makeIcon(name: string): React.ReactElement {
   )
 }
 
-function removeLocalTag(name: string) {
+function removeLocalTag(name: string): string {
   return name?.replace('local:', '')
 }
 
 function ActionBar() {
   return (
-    <div className="p-2">
-      <button className="btn btn-sm">lock</button>
+    <div className="">
+      <Button>Lock</Button>
     </div>
   )
 }
