@@ -1,5 +1,5 @@
 import '@styles/globals.scss'
-import { Log } from '@utils/cusomLog'
+import { Log } from '@utils/customLog'
 import type { AppProps, NextWebVitalsMetric } from 'next/app'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { Provider } from 'react-redux'

@@ -4,7 +4,7 @@ import { useQuery } from 'react-query'
 import { SERVER_BASE_URL } from 'src/constants'
 import styles from './TokenTable.module.scss'
 import nexusTokenBgLight from '@assets/icons/TokenIconType1.svg'
-import { Log } from '@utils/cusomLog'
+import { Log } from '@utils/customLog'
 import Image from 'next/image'
 import { Button } from '@components/common/Button'
 interface tokenDataType {
