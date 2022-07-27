@@ -5,7 +5,9 @@ import Footer from '@components/Footer'
 import { NextComponentType, NextPageContext } from 'next'
 import React, { ReactNode } from 'react'
 import { MenuPage } from '@components/common/Menu'
-
+import { setShowMenu } from '@store/slices/homepageSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from '@store/store'
 interface LayoutProps {
   children: ReactNode
 }
@@ -16,10 +18,11 @@ interface LayoutProps {
 const Layout: NextComponentType<NextPageContext, {}, LayoutProps> = ({
   children,
 }: LayoutProps) => {
-  const [showMenu, setShowMenu] = React.useState(false)
+  const dispatch = useDispatch()
+  const { showMenu } = useSelector((state: RootState) => state.home)
 
   const handleMenuClick = () => {
-    setShowMenu(!showMenu)
+    dispatch(setShowMenu(!showMenu))
   }
 
   return (
