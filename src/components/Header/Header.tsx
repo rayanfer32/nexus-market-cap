@@ -4,8 +4,14 @@ import NexusBlueSvg from '@assets/icons/nexusBlue.svg'
 import { BiMenu, BiSearch } from 'react-icons/bi'
 import { IconContext } from 'react-icons'
 import styles from './Header.module.scss'
+import { setShowMenu } from '@views/Home/homepageSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from '@store/store'
 
 function Header() {
+  const dispatch = useDispatch()
+  const { showMenu } = useSelector((state: RootState) => state.home)
+
   return (
     <div>
       <nav className={styles.nav}>
@@ -17,7 +23,7 @@ function Header() {
         <div className={styles.nav_buttons}>
           <IconContext.Provider value={{ size: '1.5rem' }}>
             <BiSearch />
-            <BiMenu />
+            <BiMenu onClick={() => dispatch(setShowMenu(!showMenu))} />
           </IconContext.Provider>
         </div>
       </nav>
