@@ -5,5 +5,5 @@
  */
 export const getRouteName = (path: string): string => {
   const route = path.replace(/\/|#/, '')
-  return route ? route : '';
+  return route ? route : ''
 }

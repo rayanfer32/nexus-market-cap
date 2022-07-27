@@ -11,8 +11,7 @@ export class Logger {
   static #style = `color:${color.WHITE};padding:2px;border-radius:4px;margin-right:4px;`
   static #infoStyle = `background:${color.NEXUS_BLUE}; ${this.#style}`
   static #warnStyle = `background:${color.FULVOUS};${this.#style}`
-  static #errorStyle = `background:${color.MAXIMUM_RED};${this.#style
-    }`
+  static #errorStyle = `background:${color.MAXIMUM_RED};${this.#style}`
 
   static log(...data: any[]): void {
     Logger.#isShow &&

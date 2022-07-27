@@ -33,4 +33,4 @@ export const colors = {
   CAROLINA_BLUE: '#159de1',
 }
 
-export default colors;
+export default colors

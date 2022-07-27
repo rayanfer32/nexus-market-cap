@@ -1,29 +1,49 @@
-# Add 'chore' label to any root file changes
+# analytics:
+#   -
+
 chore:
   - '*'
 
-'chore:pages':
-  - src/pages/**/*
+documentation:
+  - any: ['docs/**/*', '*.md']
 
-source:
-  - src/*
+pages:
+  - src/pages/**/*
 
 'styles:global':
   - any: ['src/styles/**/*.scss', 'src/styles/*.scss']
 
-'styles':
-  - any: ['sr/components/**/*.scss', 'src/pages/**/*.scss']
-
-'assests':
-  - any: ['src/assests/**/*']
+styles:
+  - any: ['src/components/**/*.scss', 'src/pages/**/*.scss']
 
 workflow:
   - any:
       ['.github/**/*', '.husky/**/*', '.vscode/**/*', '.github/workflow/**/*']
 
-utils:
-  - src/utils/**/*
+feat:
+  - pr:
+      title:
+        - 'feat:*'
+  - commits:
+      title:
+        - 'feat:*'
+
+bug:
+  - pr:
+      title:
+        - 'fix:*'
+  - commits:
+      title:
+        - 'fix:*'
 
 test:
   - src/**/*.test.js
   - src/**/*.test.ts
+  - pr:
+      title:
+        - 'test:*'
+      body:
+        - any: ['*test*']
+  - commits:
+      title:
+        - 'test:*'
