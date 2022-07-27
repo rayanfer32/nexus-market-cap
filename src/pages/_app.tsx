@@ -4,6 +4,7 @@ import type { AppProps, NextWebVitalsMetric } from 'next/app'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { Provider } from 'react-redux'
 import { store } from '@store/store'
+import { ReactQueryDevtools } from 'react-query/devtools'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const queryClient = new QueryClient()
@@ -13,6 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Provider store={store}>
         <Component {...pageProps} />
       </Provider>
+      <ReactQueryDevtools initialIsOpen={false} position={'bottom-right'} />
     </QueryClientProvider>
   )
 }
