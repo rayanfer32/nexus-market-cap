@@ -1,14 +1,23 @@
 import React from 'react'
 import styles from './Advertisement.module.scss'
-import adsData from '@assets/data/adsData.json'
 import Image from 'next/image'
+import { SERVER_BASE_URL } from '@constants/index'
+import axios from 'axios'
+import { useQuery } from 'react-query'
 
 export default function Advertisement() {
+  async function fetchAds() {
+    const { data } = await axios.get(`${SERVER_BASE_URL}/api/adcontents`)
+    return data.data
+  }
+
+  const { data } = useQuery(['ads'], fetchAds)
+
   return (
     <div className={styles.container}>
-      {adsData.map(({ title, desc, image }) => (
-        <AdCard key={title} title={title} desc={desc} image={image} />
-      ))}
+      {data?.map((ad: any) => {
+        return <AdCard key={ad.id} {...ad.attributes} />
+      })}
     </div>
   )
 }
