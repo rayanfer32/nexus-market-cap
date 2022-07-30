@@ -1,12 +1,12 @@
 import axios from 'axios'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useQuery } from 'react-query'
 import { SERVER_BASE_URL } from 'src/constants'
 import styles from './TokenTable.module.scss'
 import nexusTokenBgLight from '@assets/icons/TokenIconType1.svg'
-import { Log } from '@utils/customLog'
 import Image from 'next/image'
 import { Button } from '@components/common/Button'
+import Table from '@components/Table/Table'
 interface tokenDataType {
   id: number
   attributes: {
@@ -26,15 +26,53 @@ interface tokenDataType {
   }
 }
 
+const columns = [
+  {
+    Header: 'Rank',
+    accessor: 'attributes.rank', // accessor is the "key" in the data
+  },
+  {
+    Header: 'Token',
+    accessor: 'attributes.name',
+    Cell: ({ value }: { value: string }) => (
+      <td>
+        {value ? makeIcon(removeLocalTag(value)) : value.substring(0, 10)}
+      </td>
+    ),
+  },
+  {
+    Header: 'Price',
+    accessor: 'attributes.priceUSD',
+  },
+  {
+    Header: '24h',
+    accessor: 'attributes.price24h',
+  },
+  {
+    Header: '7d',
+    accessor: 'attributes.price7d',
+  },
+  {
+    Header: 'Rating',
+    accessor: 'attributes.rating',
+  },
+  {
+    Header: 'Supply',
+    accessor: 'attributes.currentsupply',
+  },
+  {
+    Header: 'Max Supply',
+    accessor: 'attributes.maxsupply',
+  },
+]
+
 export default function TokenTable() {
   const coinsRQ = useQuery(['coins'], async () => {
-    const { data } = (await axios.get(`${SERVER_BASE_URL}/api/coins`)) as any
+    const { data } = (await axios.get(
+      `${SERVER_BASE_URL}/api/coins?pagination[start]=0&pagination[limit]=100`
+    )) as any
     return data?.data as tokenDataType[]
   })
-
-  useEffect(() => {
-    Log(coinsRQ.data)
-  }, [coinsRQ.data])
 
   if (coinsRQ.error) {
     return <div>error</div>
@@ -43,47 +81,7 @@ export default function TokenTable() {
   return (
     <div className={styles.container}>
       <ActionBar />
-      <table className={styles.table}>
-        <thead className={styles.thead}>
-          <tr>
-            <th>#</th>
-            <th>Token</th>
-
-            <th>Price</th>
-            <th>24h</th>
-            <th>7D</th>
-            {/* <th>Volume(24h)</th> */}
-
-            <th>MaxSupply</th>
-            <th>CurrentSupply</th>
-            {/* <th>Volume(24h)</th> */}
-          </tr>
-        </thead>
-
-        <tbody className={styles.tbody}>
-          {coinsRQ?.data?.map((_item, index) => {
-            const item = _item.attributes
-
-            return (
-              <tr key={index} className={styles.tr}>
-                <td>{item.rank}</td>
-                <td>
-                  {item?.ticker
-                    ? makeIcon(removeLocalTag(item.ticker))
-                    : item.name.substring(0, 10)}
-                  {/* {removeLocalTag(item.ticker)} */}
-                </td>
-                <td>{item.priceUSD}</td>
-                <td>{item.price24h}</td>
-                <td>{item.price7d}</td>
-                <td>{item.maxsupply}</td>
-                <td>{item.currentsupply}</td>
-                {/* <td>{item.balance}</td> */}
-              </tr>
-            )
-          })}
-        </tbody>
-      </table>
+      <Table columns={columns} data={coinsRQ?.data} />
     </div>
   )
 }
