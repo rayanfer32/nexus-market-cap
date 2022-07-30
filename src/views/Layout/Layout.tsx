@@ -3,8 +3,11 @@ import { DevViewDebug } from '@views/DevView'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
 import { NextComponentType, NextPageContext } from 'next'
-import { ReactNode } from 'react'
-
+import React, { ReactNode } from 'react'
+import { MenuPage } from '@components/common/Menu'
+import { setShowMenu } from '@store/slices/homepageSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from '@store/store'
 interface LayoutProps {
   children: ReactNode
 }
@@ -15,6 +18,13 @@ interface LayoutProps {
 const Layout: NextComponentType<NextPageContext, {}, LayoutProps> = ({
   children,
 }: LayoutProps) => {
+  const dispatch = useDispatch()
+  const { showMenu } = useSelector((state: RootState) => state.home)
+
+  const handleMenuClick = () => {
+    dispatch(setShowMenu(!showMenu))
+  }
+
   return (
     <>
       {/* Need second opinion on section tag is it required or not */}
@@ -23,6 +33,7 @@ const Layout: NextComponentType<NextPageContext, {}, LayoutProps> = ({
         <main className={styles.container}>{children}</main>
         <Footer />
       </section>
+      <MenuPage show={showMenu} onClick={handleMenuClick} />
       <DevViewDebug />
     </>
   )

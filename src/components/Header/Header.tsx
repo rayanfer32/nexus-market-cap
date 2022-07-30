@@ -1,23 +1,22 @@
-import Image from 'next/image'
 import React from 'react'
-import NexusBlueSvg from '@assets/icons/nexusBlue.svg'
 import { BiMenu, BiSearch } from 'react-icons/bi'
 import { IconContext } from 'react-icons'
 import styles from './Header.module.scss'
+import Brand from '@components/common/Brand'
+import { setShowMenu } from '@store/slices/homepageSlice'
+import { useDispatch } from 'react-redux'
 
 function Header() {
+  const dispatch = useDispatch()
+
   return (
     <div>
       <nav className={styles.nav}>
-        <div className={styles.logo}>
-          <Image src={NexusBlueSvg} width={32} height={32} alt="logo" />
-          <p className={styles.title}>NexusMarketCap</p>
-        </div>
-
+        <Brand />
         <div className={styles.nav_buttons}>
           <IconContext.Provider value={{ size: '1.5rem' }}>
             <BiSearch />
-            <BiMenu />
+            <BiMenu onClick={() => dispatch(setShowMenu(true))} />
           </IconContext.Provider>
         </div>
       </nav>
