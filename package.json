@@ -14,9 +14,22 @@
     "clean": "rimraf .next && rimraf dist",
     "clean:cache": "rimraf .next",
     "clean:deep": "rimraf .next && rimraf dist && rimraf node_modules",
-    "pre-commit": "yarn format && yarn lint --fix && git add -A .",
+    "pre-commit": "lint-staged",
     "prepare": "husky install",
     "overrideChangelog": "gren changelog --override"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint",
+      "yarn format",
+      "yarn lint --fix"
+    ],
+    "*.{css,scss}": [
+      "yarn format"
+    ],
+    "*.{json,md,yml,html}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.2",
@@ -27,6 +40,7 @@
     "react-icons": "^4.4.0",
     "react-query": "^3.39.1",
     "react-redux": "^8.0.2",
+    "react-table": "^7.8.0",
     "sharp": "^0.30.7"
   },
   "devDependencies": {
@@ -35,11 +49,13 @@
     "@types/node": "17.0.21",
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
+    "@types/react-table": "^7.7.12",
     "danger": "^11.0.7",
     "eslint": "8.11.0",
     "eslint-config-next": "12.1.0",
     "eslint-config-prettier": "^8.5.0",
     "husky": "^7.0.0",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.6.0",
     "rimraf": "^3.0.2",
     "sass": "^1.49.9",
