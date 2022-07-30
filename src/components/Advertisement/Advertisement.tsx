@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './Advertisement.module.scss'
-import adsData from '@assets/data/adsData.json'
 import Image from 'next/image'
 import Carousel, { RenderArrowProps } from 'react-elastic-carousel'
 import { HiArrowSmLeft, HiArrowSmRight } from 'react-icons/hi'
