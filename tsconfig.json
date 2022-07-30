@@ -32,7 +32,13 @@
     "pretty": true,
     "sourceMap": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "dangerfile.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "dangerfile.ts",
+    "src/constants/footer.js"
+  ],
   "exclude": [
     "node_modules",
     "dist",
