@@ -14,9 +14,22 @@
     "clean": "rimraf .next && rimraf dist",
     "clean:cache": "rimraf .next",
     "clean:deep": "rimraf .next && rimraf dist && rimraf node_modules",
-    "pre-commit": "yarn format && yarn lint --fix && git add -A .",
+    "pre-commit": "lint-staged",
     "prepare": "husky install",
     "overrideChangelog": "gren changelog --override"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint",
+      "yarn format",
+      "yarn lint --fix"
+    ],
+    "*.{css,scss}": [
+      "yarn format"
+    ],
+    "*.{json,md,yml,html}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.2",
@@ -42,6 +55,7 @@
     "eslint-config-next": "12.1.0",
     "eslint-config-prettier": "^8.5.0",
     "husky": "^7.0.0",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.6.0",
     "rimraf": "^3.0.2",
     "sass": "^1.49.9",
