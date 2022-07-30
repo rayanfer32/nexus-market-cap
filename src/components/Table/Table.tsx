@@ -5,14 +5,19 @@ import Pagination from './Pagination'
 
 export default function Table({
   columns,
-  data = [],
+  data,
   paginate = true,
 }: {
   columns: any[]
-  data: any[]
+  data: Array<{ [key: string]: any }> | undefined
   paginate?: boolean
 }) {
-  const tableInstance: any = useTable(
+  if (!data) {
+    return <div>No Data</div>
+  }
+
+  const tableHook = useTable
+  const tableInstance: any = tableHook(
     { data, columns },
     useSortBy,
     usePagination

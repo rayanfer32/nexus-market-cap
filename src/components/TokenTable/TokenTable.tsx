@@ -81,7 +81,7 @@ export default function TokenTable() {
   return (
     <div className={styles.container}>
       <ActionBar />
-      <Table columns={columns} data={coinsRQ.data || []} />
+      <Table columns={columns} data={coinsRQ?.data} />
     </div>
   )
 }

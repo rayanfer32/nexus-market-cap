@@ -2,3 +2,7 @@
   width: min(100% - 2rem, 60rem);
   margin-inline: auto;
 }
+
+[data-overflow='true'] {
+  overflow: hidden;
+}
