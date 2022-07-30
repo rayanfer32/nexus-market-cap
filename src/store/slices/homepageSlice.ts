@@ -8,6 +8,11 @@ const homepageSlice = createSlice({
   reducers: {
     setShowMenu(state, action) {
       state.showMenu = action.payload
+      const body = document.querySelector('body')
+      if (body) {
+        body.setAttribute('data-overflow', action.payload)
+      }
+      return
     },
   },
 })
