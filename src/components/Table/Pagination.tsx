@@ -5,7 +5,7 @@ import {
   BiFirstPage,
   BiLastPage,
 } from 'react-icons/bi'
-import debounce from '@utils/common/debounce'
+import debounce from '@utils/debounce'
 
 export const Pagination = ({
   controls,
