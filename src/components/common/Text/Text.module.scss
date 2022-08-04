@@ -1,0 +1,7 @@
+@use '@styles/utils' as *;
+
+.text {
+  margin: 0;
+  font-family: 'MavenPro', system-ui, -apple-system, sans-serif;
+  color: var(--text-primary, $text-primary, #000000);
+}
