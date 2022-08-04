@@ -24,7 +24,7 @@ export class Logger {
 
   static warn(...data: any[]): void {
     Logger.#isShow &&
-      console.log.apply(console, [
+      console.warn.apply(console, [
         `%c${Logger.#env}`,
         Logger.#warnStyle,
         ...data,
@@ -33,7 +33,7 @@ export class Logger {
 
   static error(...data: any[]): void {
     Logger.#isShow &&
-      console.log.apply(console, [
+      console.error.apply(console, [
         `%c${Logger.#env}`,
         Logger.#errorStyle,
         ...data,

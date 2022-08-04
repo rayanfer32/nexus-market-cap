@@ -21,7 +21,7 @@ export const ObjectMapf = (obj: object) => (fn: any) =>
  * @param {*} obj Object to be converted
  * @returns Array of object values
  */
-export const ObjectToArray = (obj: any) =>
+export const ObjectToArray = (obj: { [key: string]: any }) =>
   Object.keys(obj).map((key) => obj[key])
 
 /**
@@ -29,7 +29,7 @@ export const ObjectToArray = (obj: any) =>
  * @param {*} obj
  * @returns Array of object key and value
  */
-export const ObjectToArrayWithKey = (obj: any) =>
+export const ObjectToArrayWithKey = (obj: { [key: string]: any }) =>
   Object.keys(obj).map((key) => [key, obj[key]])
 
 // https://rawcdn.githack.com/sitepoint-editors/clipboardapi/a8dfad6a1355bbb79381e61a2ae68394af144cc2/demotext.html
