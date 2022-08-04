@@ -19,15 +19,15 @@
     "overrideChangelog": "gren changelog --override"
   },
   "lint-staged": {
-    "*.{js|jsx|ts|tsx}": [
+    "*.js|jsx|ts|tsx": [
       "eslint",
       "yarn format",
       "yarn lint --fix"
     ],
-    "*.{css|scss}": [
+    "*.css|scss": [
       "yarn format"
     ],
-    "*.{json|md|yml|html}": [
+    "*.json|md|yml|html": [
       "prettier --write"
     ]
   },
