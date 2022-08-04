@@ -1,4 +1,4 @@
-import { classnames } from '@utils/classnames'
+import { cls } from '@utils/classnames'
 import { MouseEventHandler } from 'react'
 import styles from './MenuPage.module.scss'
 
@@ -12,10 +12,7 @@ export const MenuPage = ({ show, onClick }: MenuPageProps) => {
     <>
       {
         <section
-          className={classnames(
-            styles.menuPage,
-            show ? styles.show : styles.hide
-          )}
+          className={cls(styles.menuPage, show ? styles.show : styles.hide)}
           onClick={onClick}
         >
           Menu Page
