@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import { Provider } from 'react-redux'
 import { store } from '@store/store'
 import { ReactQueryDevtools } from 'react-query/devtools'
+import '@utils/i18n'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const queryClient = new QueryClient()
