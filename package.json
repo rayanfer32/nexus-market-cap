@@ -34,9 +34,12 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.2",
     "axios": "^0.27.2",
+    "i18next": "^21.8.16",
+    "i18next-browser-languagedetector": "^6.1.4",
     "next": "12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-i18next": "^11.18.3",
     "react-icons": "^4.4.0",
     "react-query": "^3.39.1",
     "react-redux": "^8.0.2",

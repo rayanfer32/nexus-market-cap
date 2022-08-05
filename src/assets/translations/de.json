@@ -1,0 +1,18 @@
+{
+  "translation": {
+    "tokens": "Munten",
+    "amount": "Bedrag",
+    "address": "Adres",
+    "date": "Datum",
+    "confirmations": "Bevestigingen",
+    "confirm": "Bevestigen",
+    "cancel": "Annuleren",
+    "send": "Verzenden",
+    "receive": "Ontvangen",
+    "balance": "Saldo",
+    "marketCap": "Marktkapitalisatie",
+    "totalSupply": "Totale voorraad",
+    "price": "Prijs",
+    "maxSupply": "MaxLevering"
+  }
+}
