@@ -1,0 +1,25 @@
+{
+  "short_name": "NMC",
+  "name": "NexusMarketCap",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "prefer_related_applications": true,
+  "related_applications": [
+    {
+      "platform": "play",
+      "id": "io.nexus.wallet"
+    }
+  ],
+  "display": "standalone",
+  "start_url": "/?utm_source=androidappinstallbanner"
+}
