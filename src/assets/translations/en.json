@@ -1,0 +1,14 @@
+{
+  "translation": {
+    "tokens": "Tokens",
+    "amount": "Amount",
+    "address": "Address",
+    "date": "Date",
+    "confirmations": "Confirmations",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "send": "Send",
+    "receive": "Recieve",
+    "balance": "Balance"
+  }
+}
