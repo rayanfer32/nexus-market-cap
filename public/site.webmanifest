@@ -1,6 +1,7 @@
 {
-  "name": "",
-  "short_name": "",
+  "name": "NexusMarketCap",
+  "short_name": "NMC",
+  "description": "Nexus Tokens Detailed Info, Prices, Charts, listed by market capitalization.Tracking and Auditing thousands of tokens created on nexus protocol chain.",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -15,5 +16,7 @@
   ],
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
-  "display": "standalone"
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
 }
