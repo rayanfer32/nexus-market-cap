@@ -8,12 +8,18 @@ $themes: (
     bg-secondary: clr(grey-1),
     text-primary: clr(midnightBlue),
     text-secondary: clr(oceanBlue),
+    button-bg: clr(grey-4),
+    button-text: clr(grey-1),
+    button-bg-active: rgba(clr(grey-4), 0.9),
   ),
   dark: (
     bg-primary: clr(midnightBlue),
     bg-secondary: clr(prussianBlue),
     text-primary: clr(white),
     text-secondary: clr(grey-1),
+    button-bg: clr(midnightBlue),
+    button-text: clr(grey-1),
+    button-bg-active: rgba(clr(midnightBlue), 0.9),
   ),
 );
 

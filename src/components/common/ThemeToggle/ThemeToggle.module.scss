@@ -1,0 +1,28 @@
+@use '@styles/utils' as *;
+
+.themeToggler {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: space(xxs) space(xxs);
+  cursor: pointer;
+  @include mq(small) {
+    background-color: theme(button-bg);
+    border-radius: size(border-radius);
+  }
+  &:active,
+  &:hover {
+    background-color: theme(button-bg-active);
+  }
+}
+
+.icon {
+  display: inline-block;
+  width: space(s);
+  height: space(s);
+  color: theme(text-primary);
+  @include mq(small) {
+    color: theme(button-text);
+  }
+}

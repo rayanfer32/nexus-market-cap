@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 /* spaces */
 $space: (
   xxxxs: 0.125rem /* 2px */,
@@ -11,4 +13,9 @@ $space: (
   xl: 2rem /* 48px */,
   xxl: 3rem /* 72px */,
   xxxl: 4rem /* 96px */,
+);
+
+$size: (
+  border-radius: map-get($space, xxxs),
+  padding: map-get($space, xxxs),
 );

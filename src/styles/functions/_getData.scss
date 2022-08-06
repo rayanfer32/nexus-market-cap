@@ -38,6 +38,14 @@
 }
 
 /**
+  function to get sass element variables
+  eg: border-radius: element(radius);
+  */
+@function size($value) {
+  @return map.get($size, $value);
+}
+
+/**
   function to get sass theme variables
   eg: color: theme(primary);
   */
