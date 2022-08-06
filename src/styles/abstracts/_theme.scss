@@ -1,21 +1,20 @@
 @use 'sass:map';
 
 // TODO: Add project theme colors here
-$theme-light: (
+$themes: (
   light: (
-    background: #ffffff,
-    text: #000000,
+    bg-primary: clr(white),
+    bg-secondary: clr(grey-1),
+    text-primary: clr(midnightBlue),
+    text-secondary: clr(oceanBlue),
   ),
-);
-
-$theme-dark: (
   dark: (
-    background: #000000,
-    text: #ffffff,
+    bg-primary: clr(midnightBlue),
+    bg-secondary: clr(prussianBlue),
+    text-primary: clr(white),
+    text-secondary: clr(grey-1),
   ),
 );
-
-$themes: map-merge($theme-light, $theme-dark);
 
 // IMPORTANT: manual override of theme colors can be done by adding
 // data-user-theme='light' or data-user-theme='dark' attribute to the body element.
