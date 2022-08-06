@@ -5,13 +5,13 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: $space-xxxs;
-  margin: $space-l auto 0 auto;
+  gap: space(xxxs);
+  margin: space(l) auto 0 auto;
   width: 100%;
   color: var(--theme-page-text);
   background: var(--theme-footer-bg);
   box-shadow: 0 -0.25rem 0.25rem rgba(0, 0, 0, 0.15);
-  font-size: var(--font-normal);
+  font-size: font-size(s);
 
   // thin line between footer and content
   &::before {
@@ -32,7 +32,7 @@
     padding: var(--space-s);
   }
   &__secondary {
-    font-size: var(--font-s);
+    font-size: font-size(xs);
   }
 
   &__info {
@@ -43,7 +43,7 @@
     &__title {
       color: var(--theme-page-text);
       margin: var(--space-xxxs) 0;
-      font-size: var(--font-normal);
+      font-size: font-size(s);
     }
     &__segment {
       display: flex;

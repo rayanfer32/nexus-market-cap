@@ -26,3 +26,19 @@
   $fontSize: map.get($font, weight);
   @return map.get($fontSize, $value);
 }
+
+/**
+  function to get sass space variables
+  eg: padding: space(m);
+  */
+@function space($value) {
+  @return map.get($space, $value);
+}
+
+/**
+  function to get sass theme variables
+  eg: color: theme(primary);
+  */
+@function theme($value) {
+  @return var(--#{$value});
+}
