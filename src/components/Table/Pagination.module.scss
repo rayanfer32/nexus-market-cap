@@ -1,6 +1,8 @@
+@use '@styles/utils' as *;
+
 .pagination {
-  color: var(--theme-page-text);
-  background: var(--theme-tab-bg);
+  color: theme(text-primary);
+  background: theme(bg-secondary);
   padding: 1rem;
   width: 100%;
   border-radius: 0.5rem;
@@ -16,7 +18,7 @@
     justify-content: center;
     align-items: center;
     gap: 0.25rem;
-    color: var(--nexus-blue);
+    color: clr(nexusBlue);
     &__icon {
       all: unset;
       border: none;
@@ -25,22 +27,22 @@
       cursor: pointer;
 
       &:hover {
-        outline: 1px solid var(--nexus-blue);
+        outline: 1px solid clr(nexusBlue);
         border-radius: 0.25rem;
-        color: hsl(202, 202%, 52%);
+        color: clr(nexusBlue);
       }
 
       &:disabled {
         cursor: not-allowed;
         opacity: 0.6;
         outline: none;
-        color: var(--sky-blue);
+        color: clr(skyBlue);
       }
     }
 
     &__page {
       margin: 0 1rem;
-      color: var(--theme-page-text);
+      color: theme(text-primary);
     }
   }
 
@@ -61,29 +63,29 @@
       input {
         background: hsla(0, 0%, 100%, 0.5);
         padding: 0.3rem;
-        border: 1px solid var(--sky-blue);
+        border: 1px solid clr(skyBlue);
         border-radius: 0.25rem;
-        color: var(--midnight-blue);
+        color: clr(midnightBlue);
         font-size: font-size(s);
 
         &:focus {
           background: hsla(0, 0%, 100%, 1);
-          outline-color: var(--nexus-blue);
+          outline-color: clr(nexusBlue);
         }
       }
     }
 
     &__pageDropdown {
       padding: 0.3rem;
-      border: 1px solid var(--sky-blue);
+      border: 1px solid clr(skyBlue);
       border-radius: 0.25rem;
-      color: var(--midnight-blue);
+      color: clr(midnightBlue);
       background: hsla(0, 0%, 100%, 0.5);
       font-size: font-size(s);
 
       &:focus {
         background: hsla(0, 0%, 100%, 1);
-        outline-color: var(--nexus-blue);
+        outline-color: clr(nexusBlue);
       }
     }
   }
