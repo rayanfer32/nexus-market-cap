@@ -1,5 +1,7 @@
 @use 'sass:map';
-@use '../abstracts' as *;
+@use '../abstracts/color' as *;
+@use '../abstracts/typography' as *;
+@use '../abstracts/variables' as *;
 
 /**
  function to get sass color variables

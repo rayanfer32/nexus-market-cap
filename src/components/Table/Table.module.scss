@@ -1,14 +1,16 @@
+@use '@styles/utils' as *;
+
 .tableContainer {
   overflow: auto;
-  margin-bottom: var(--space-l);
+  margin-bottom: space(l);
 }
 
 .table {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
-  color: var(--theme-page-text);
-  background: var(--theme-page-background);
+  color: theme(text-primary);
+  background: theme(bg-primary);
   border-radius: 4px;
   box-shadow: var(--card-shadow);
   font-size: font-size(s);
@@ -22,8 +24,8 @@
 
 .thead > tr > th {
   padding: 0.6rem;
-  background: var(--theme-tab-bg);
-  color: var(--theme-tab-text);
+  background: theme(bg-secondary);
+  color: theme(text-primary);
 }
 
 .th {
@@ -35,7 +37,7 @@
 }
 
 .tr {
-  border-top: 1px solid var(--theme-tab-bg);
+  border-top: 1px solid theme(bg-secondary);
 }
 
 .td {
@@ -45,24 +47,24 @@
 .thead tr {
   border: none;
   & th:first-child {
-    border-top-left-radius: var(--space-xxxs);
+    border-top-left-radius: space(xxxs);
   }
   & th:last-child {
-    border-top-right-radius: var(--space-xxxs);
+    border-top-right-radius: space(xxxs);
   }
 }
 
 .tbody tr:last-child {
   & td:first-child {
-    border-bottom-left-radius: var(--space-xxxs);
+    border-bottom-left-radius: space(xxxs);
   }
   & td:last-child {
-    border-bottom-right-radius: var(--space-xxxs);
+    border-bottom-right-radius: space(xxxs);
   }
 }
 
 .noRecords {
-  color: var(--theme-page-text);
+  color: theme(text-primary);
   display: flex;
   padding: 0.5rem 1rem;
   justify-content: center;
