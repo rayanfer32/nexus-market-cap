@@ -52,7 +52,7 @@
 
     &::before {
       content: '|';
-      font-size: 2rem;
+      font-size: font-size(xl);
       color: hsla(197, 100%, 31%, 0.5);
       margin-right: 0.5rem;
     }
@@ -64,7 +64,7 @@
         border: 1px solid var(--sky-blue);
         border-radius: 0.25rem;
         color: var(--midnight-blue);
-        font-size: var(--font-normal);
+        font-size: font-size(s);
 
         &:focus {
           background: hsla(0, 0%, 100%, 1);
@@ -79,7 +79,7 @@
       border-radius: 0.25rem;
       color: var(--midnight-blue);
       background: hsla(0, 0%, 100%, 0.5);
-      font-size: var(--font-normal);
+      font-size: font-size(s);
 
       &:focus {
         background: hsla(0, 0%, 100%, 1);
