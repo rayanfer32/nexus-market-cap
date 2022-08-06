@@ -11,7 +11,72 @@ body {
   font-family: 'MavenPro', system-ui, -apple-system, sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd,
+pre {
+  margin: 0;
+}
+
+body {
+  font-size: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
+  min-height: 100vh;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+}
+
+h1 {
+  font-size: clamp(1.75rem, 1.39rem + 1.79vw, 3rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 1.29rem + 1.07vw, 2.25rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 1.11rem + 0.71vw, 1.75rem);
+}
+
+h4,
+h5,
+h6 {
+  font-size: clamp(1.125rem, 1.09rem + 0.18vw, 1.25rem);
+}
+
+// NOTE: In the future, these changes gives problems with the typography
+// We need to find a better solution.

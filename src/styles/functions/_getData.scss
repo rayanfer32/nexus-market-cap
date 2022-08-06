@@ -40,5 +40,5 @@
   eg: color: theme(primary);
   */
 @function theme($value) {
-  @return map.get($theme, $value);
+  @return var(--#{$value});
 }

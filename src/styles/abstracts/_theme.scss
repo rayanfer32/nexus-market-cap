@@ -15,4 +15,7 @@ $theme-dark: (
   ),
 );
 
-$theme: map-merge($theme-light, $theme-dark);
+$themes: map-merge($theme-light, $theme-dark);
+
+// IMPORTANT: manual override of theme colors can be done by adding
+// data-user-theme='light' or data-user-theme='dark' attribute to the body element.

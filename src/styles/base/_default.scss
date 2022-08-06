@@ -5,21 +5,32 @@
 @use '../mixins/mediaQuery' as *;
 
 /**
-  * Add colors to the DOM as CSS variables
+  * Add colors to the DOM as CSS variables as fallback for the theme colors.
 */
-html {
-  @each $name, $value in $clr {
+:root {
+  @each $name, $value in map-get($themes, light) {
     --#{$name}: #{$value};
   }
 }
 
 /**
-  * If there is attribute [data-theme] on the body element, 
-  * then use the theme colors defined in the data-theme attribute.
+  * Add colors to the DOM as CSS variables as preferred dark theme colors.
+*/
+@media (prefers-color-scheme: dark) {
+  :root {
+    @each $name, $value in map-get($themes, dark) {
+      --#{$name}: #{$value};
+    }
+  }
+}
+
+/**
+  * If there is attribute [data-user-theme] on the body element, 
+  * then use the theme colors defined in the data-user-theme attribute.
 */
 body {
-  @each $theme, $clr in $theme {
-    &[data-theme='#{string.quote($theme)}'] {
+  @each $theme, $clr in $themes {
+    &[data-user-theme='#{string.quote($theme)}'] {
       @each $name, $value in $clr {
         --#{$name}: #{$value};
       }
