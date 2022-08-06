@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use '../functions/getData' as *;
 
 // TODO: Add project theme colors here
 $themes: (
