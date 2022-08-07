@@ -5,6 +5,7 @@ import { isDev } from '@utils/getEnv'
 import DevView from '@views/DevView'
 import { useRouter } from 'next/router'
 import { Button, Input, ThemeToggle } from '@components/common'
+import Dropdown from '@components/common/Dropdown'
 
 const DevPage: NextPage = () => {
   const { isProd: mockProd } = useRouter().query
@@ -17,6 +18,21 @@ const DevPage: NextPage = () => {
           <Button />
           <Input />
           <ThemeToggle />
+          <Dropdown type="elevated">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </Dropdown>
+          <Dropdown>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </Dropdown>
+          <Dropdown type="flat">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </Dropdown>
           {/* Add your components inside these */}
         </DevView>
       </Layout>
