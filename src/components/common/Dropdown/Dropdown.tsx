@@ -1,28 +1,54 @@
 import { cls } from '@utils/classnames'
 import { useOnClickOutside } from '@utils/hooks'
-import { MouseEvent, ReactNode, useRef, useState } from 'react'
+import {
+  Children,
+  cloneElement,
+  CSSProperties,
+  isValidElement,
+  MouseEvent,
+  ReactNode,
+  useRef,
+  useState,
+} from 'react'
 import { BsChevronDown } from 'react-icons/bs'
 import styles from './Dropdown.module.scss'
 
 export type DropdownType = 'elevated' | 'flat'
 
 export interface DropdownProps {
+  header?: ReactNode
   type?: DropdownType
   children: ReactNode
   className?: string
-  // eslint-disable-next-line no-unused-vars
-  onClick?: (e: MouseEvent<HTMLElement>) => void
+  width?: string
+  height?: string
+  headerWidth?: string
 }
 
 export const Dropdown = (props: DropdownProps) => {
-  const { children, className = '', type = '' } = props
+  const {
+    children,
+    className = '',
+    header,
+    type = '',
+    width,
+    height,
+    headerWidth,
+  } = props
   const ref = useRef<HTMLDivElement>(null)
   const [isDropdownShow, toggleDropdown] = useState(false)
+
   useOnClickOutside(ref, () => toggleDropdown(false))
 
+  const style = {
+    '--width': width,
+    '--height': height,
+    '--header-width': headerWidth,
+  } as CSSProperties
+
   return (
-    <div className={cls(styles.wrapper, className)} ref={ref}>
-      <div
+    <div className={cls(styles.wrapper, className)} ref={ref} style={style}>
+      <button
         className={cls(
           styles.header,
           styles[type],
@@ -30,12 +56,12 @@ export const Dropdown = (props: DropdownProps) => {
         )}
         onClick={() => toggleDropdown((v) => !v)}
       >
-        <>Dropdown</>
+        <>{header}</>
         <BsChevronDown
           className={cls(styles.icon, isDropdownShow && styles.active)}
           color="inherit"
         />
-      </div>
+      </button>
       <div
         className={cls(
           styles.body,
@@ -43,7 +69,19 @@ export const Dropdown = (props: DropdownProps) => {
           isDropdownShow && styles.active
         )}
       >
-        {children}
+        {Children.map(children, (child) => {
+          if (isValidElement(child)) {
+            return cloneElement(child, {
+              onClick: (e: MouseEvent | any) => {
+                toggleDropdown(false)
+                if (child.props.onClick) {
+                  child.props.onClick(e)
+                }
+              },
+            })
+          }
+          return child
+        })}
       </div>
     </div>
   )

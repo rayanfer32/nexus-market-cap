@@ -1,21 +1,25 @@
 @use '@styles/utils' as *;
 
 .wrapper {
+  --width: 100%;
+  --height: max-content;
+  --header-width: 100%;
   position: relative;
   display: inline-block;
-  width: 100%;
-  width: 50%;
+  width: var(--width);
 }
 
 .header {
   color: inherit;
+  background: none;
+  border: none;
   padding: space(xxs) space(xxs);
   border-radius: size(border-radius);
   transition: all 0.2s ease-in-out;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: var(--header-width);
   cursor: pointer;
   &:hover,
   &:active {
@@ -68,15 +72,15 @@
 
   &.elevated.active {
     position: absolute;
-    max-height: max-content;
+    max-height: var(--height);
     opacity: 1;
     z-index: size(z-level-5);
-    top: space(xxl);
+    margin-top: space(xxs);
     border: toRem(1px) solid clr(grey-2);
     box-shadow: size(box-shadow);
   }
   &.flat.active {
-    max-height: 100%;
+    max-height: var(--height);
     border: toRem(1px) solid clr(grey-2);
     border-top: none;
     border-top-left-radius: 0;

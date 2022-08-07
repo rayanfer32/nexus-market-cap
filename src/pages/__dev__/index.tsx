@@ -5,7 +5,7 @@ import { isDev } from '@utils/getEnv'
 import DevView from '@views/DevView'
 import { useRouter } from 'next/router'
 import { Button, Input, ThemeToggle } from '@components/common'
-import Dropdown from '@components/common/Dropdown'
+import Dropdown, { NativeSelect } from '@components/common/Dropdown'
 
 const DevPage: NextPage = () => {
   const { isProd: mockProd } = useRouter().query
@@ -18,21 +18,28 @@ const DevPage: NextPage = () => {
           <Button />
           <Input />
           <ThemeToggle />
-          <Dropdown type="elevated">
+          <Dropdown type="elevated" header={'Drop down menu'}>
             <p>Lorem ipsum dolor sit amet.</p>
             <p>Lorem ipsum dolor sit amet.</p>
             <p>Lorem ipsum dolor sit amet.</p>
           </Dropdown>
-          <Dropdown>
+          <Dropdown header={'Drop down menu'}>
             <p>Lorem ipsum dolor sit amet.</p>
             <p>Lorem ipsum dolor sit amet.</p>
             <p>Lorem ipsum dolor sit amet.</p>
           </Dropdown>
-          <Dropdown type="flat">
+          <Dropdown type="flat" header={'Drop down menu'}>
             <p>Lorem ipsum dolor sit amet.</p>
             <p>Lorem ipsum dolor sit amet.</p>
             <p>Lorem ipsum dolor sit amet.</p>
           </Dropdown>
+          <NativeSelect
+            data={[
+              'Lorem ipsum dolor sit amet',
+              'Lorem ipsum dolor sit amet',
+              'Lorem ipsum dolor sit amet',
+            ]}
+          ></NativeSelect>
           {/* Add your components inside these */}
         </DevView>
       </Layout>
