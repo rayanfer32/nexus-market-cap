@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   padding: space(xxs) space(xxs);
+  transition: background-color 0.2s ease-in-out;
   cursor: pointer;
   @include mq(small) {
     background-color: theme(button-bg);

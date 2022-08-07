@@ -4,7 +4,7 @@ import Custom404 from '@pages/404'
 import { isDev } from '@utils/getEnv'
 import DevView from '@views/DevView'
 import { useRouter } from 'next/router'
-import { Button, Input } from '@components/common'
+import { Button, Input, ThemeToggle } from '@components/common'
 
 const DevPage: NextPage = () => {
   const { isProd: mockProd } = useRouter().query
@@ -16,6 +16,7 @@ const DevPage: NextPage = () => {
           {/* Add your components inside these */}
           <Button />
           <Input />
+          <ThemeToggle />
           {/* Add your components inside these */}
         </DevView>
       </Layout>

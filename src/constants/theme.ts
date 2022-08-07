@@ -1,5 +1,7 @@
+import { ThemeType } from '@components/common'
+
 export const theme = {
-  SYSTEM: 'system',
-  DARK: 'dark',
-  LIGHT: 'light',
+  SYSTEM: 'system' as ThemeType,
+  DARK: 'dark' as ThemeType,
+  LIGHT: 'light' as ThemeType,
 }
