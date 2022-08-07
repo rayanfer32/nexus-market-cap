@@ -11,6 +11,7 @@ $themes: (
     button-bg: clr(grey-4),
     button-text: clr(grey-1),
     button-bg-active: rgba(clr(grey-4), 0.9),
+    hover-bg: rgba(clr(grey-4), 0.1),
   ),
   dark: (
     bg-primary: clr(midnightBlue),
@@ -20,6 +21,7 @@ $themes: (
     button-bg: clr(midnightBlue),
     button-text: clr(grey-1),
     button-bg-active: rgba(clr(midnightBlue), 0.9),
+    hover-bg: rgba(clr(grey-4), 0.1),
   ),
 );
 
