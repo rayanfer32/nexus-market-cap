@@ -1,3 +1,3 @@
-export { default } from './DropDown'
-export * from './DropDown'
+export { default } from './Dropdown'
+export * from './Dropdown'
 export * from './NativeSelect'
