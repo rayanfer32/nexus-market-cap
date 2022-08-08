@@ -9,6 +9,9 @@
     "cancel": "Cancel",
     "send": "Send",
     "receive": "Recieve",
-    "balance": "Balance"
+    "balance": "Balance",
+    "maxSupply": "Max Supply",
+    "totalSupply": "Total Supply",
+    "marketCap": "Market Cap"
   }
 }
