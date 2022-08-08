@@ -29,17 +29,26 @@ interface AdCardProps {
 }
 
 function AdCard({ title, desc, image, ...rest }: AdCardProps) {
+  let imageUrl = image
+  if (image.startsWith('/uploads')) {
+    imageUrl = `${SERVER_BASE_URL}${image}`
+  }
+
   return (
     <div className={styles.card} {...rest}>
       <span className={styles.card_title}>{title}</span>
       <div className={styles.card_body}>
-        <Image
-          className={styles.card_body_image}
-          src={image}
-          alt={image}
-          width={300}
-          height={200}
-        />
+        <div className={styles.image_container}>
+          <Image
+            className={styles.card_body_image}
+            src={imageUrl}
+            alt={image}
+            width={640}
+            height={360}
+            sizes="50vw"
+            objectFit="cover"
+          />
+        </div>
         <span className={styles.card_body_desc}>{desc}</span>
       </div>
     </div>

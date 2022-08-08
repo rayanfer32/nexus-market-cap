@@ -3,7 +3,7 @@ const path = require('path')
 
 const nextConfig = {
   images: {
-    domains: ['i.imgur.com'],
+    domains: [process.env.IMAGE_DOMAIN],
   },
   i18n: {
     locales: ['en-IN'],
