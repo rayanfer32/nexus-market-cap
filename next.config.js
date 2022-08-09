@@ -3,7 +3,7 @@ const path = require('path')
 
 const nextConfig = {
   images: {
-    domains: [process.env.IMAGE_DOMAIN],
+    domains: ['strapi-cms-1.rayanfer32.repl.co'],
   },
   i18n: {
     locales: ['en-IN'],
