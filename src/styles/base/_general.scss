@@ -1,3 +1,5 @@
+@use '../functions/getData' as *;
+
 .container {
   width: min(100% - 2rem, 60rem);
   margin-inline: auto;
@@ -9,4 +11,10 @@
 
 * {
   outline-color: #0ca4fb;
+}
+
+.icon {
+  width: space(m);
+  height: space(m);
+  color: theme(text-primary);
 }
