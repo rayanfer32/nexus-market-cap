@@ -5,6 +5,7 @@ import styles from './Input.module.scss'
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   varient?: 'default' | 'outline' | 'ghost'
   className?: string
+  placeholder?: string
 }
 
 export const Input = (props: InputProps) => {
