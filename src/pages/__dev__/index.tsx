@@ -5,7 +5,7 @@ import { isDev } from '@utils/getEnv'
 import DevView from '@views/DevView'
 import { useRouter } from 'next/router'
 import { Button, Input, ThemeToggle } from '@components/common'
-import Dropdown, { NativeSelect } from '@components/common/Dropdown'
+import { Dropdown, NativeSelect } from '@components/common/DropDown'
 
 const DevPage: NextPage = () => {
   const { isProd: mockProd } = useRouter().query
