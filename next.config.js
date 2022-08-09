@@ -3,7 +3,7 @@ const path = require('path')
 
 const nextConfig = {
   images: {
-    domains: ['i.imgur.com'],
+    domains: ['strapi-cms-1.rayanfer32.repl.co'],
   },
   i18n: {
     locales: ['en-IN'],
