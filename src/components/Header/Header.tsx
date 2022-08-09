@@ -5,11 +5,18 @@ import styles from './Header.module.scss'
 import Brand from '@components/common/Brand'
 import { setShowMenu } from '@store/slices/homepageSlice'
 import { dispatch } from '@store/store'
-import Dropdown from '@components/common/Dropdown'
+import { Dropdown } from '@components/common/DropDown'
 import { ThemeToggle } from '@components/common'
 import Link from 'next/link'
 
-export default function Header() {
+export interface HeaderProps {
+  isMobile?: boolean
+}
+
+export default function Header({ isMobile }: HeaderProps) {
+  if (isMobile) {
+    return <MobileNavbar />
+  }
   return <DesktopNavbar />
 }
 
