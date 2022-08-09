@@ -2,7 +2,7 @@ import { cls } from '@utils/classnames'
 import React from 'react'
 import { BiSearch } from 'react-icons/bi'
 import { InputProps } from '../Input'
-import styles from './SearchBar.module.scss'
+import styles from './Searchbar.module.scss'
 
 export interface SearchBarProps extends InputProps {}
 
