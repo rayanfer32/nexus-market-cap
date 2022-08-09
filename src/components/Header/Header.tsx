@@ -5,7 +5,7 @@ import styles from './Header.module.scss'
 import Brand from '@components/common/Brand'
 import { setShowMenu } from '@store/slices/homepageSlice'
 import { dispatch } from '@store/store'
-import { Dropdown } from '@components/common/DropDown'
+import { Dropdown } from '@components/common/Dropdown'
 import { ThemeToggle } from '@components/common'
 import Link from 'next/link'
 
