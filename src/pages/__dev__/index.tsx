@@ -6,6 +6,9 @@ import DevView from '@views/DevView'
 import { useRouter } from 'next/router'
 import { Button, Input, ThemeToggle } from '@components/common'
 import { Dropdown, NativeSelect } from '@components/common/Dropdown'
+import { BsFillEmojiHeartEyesFill } from 'react-icons/bs'
+import Image from 'next/image'
+import nexusBlue from '@assets/icons/nexusBlue.svg'
 
 const DevPage: NextPage = () => {
   const { isProd: mockProd } = useRouter().query
@@ -23,14 +26,20 @@ const DevPage: NextPage = () => {
             <p>Lorem ipsum dolor sit amet.</p>
             <p>Lorem ipsum dolor sit amet.</p>
           </Dropdown>
-          <Dropdown header={'Drop down menu'}>
+          <Dropdown header={'Drop down menu'} arrowAnimate="none">
             <p>Lorem ipsum dolor sit amet.</p>
             <p>Lorem ipsum dolor sit amet.</p>
             <p>Lorem ipsum dolor sit amet.</p>
           </Dropdown>
-          <Dropdown type="flat" header={'Drop down menu'}>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <p>Lorem ipsum dolor sit amet.</p>
+          <Dropdown type="flat" arrowAlign="left" arrowAnimate="flip">
+            <div style={{ display: 'flex', gap: '4px' }}>
+              <BsFillEmojiHeartEyesFill />
+              <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div style={{ display: 'flex', gap: '4px' }}>
+              <Image width={16} height={16} src={nexusBlue} alt="" />
+              <p>Lorem ipsum dolor sit amet.</p>
+            </div>
             <p>Lorem ipsum dolor sit amet.</p>
           </Dropdown>
           <NativeSelect
