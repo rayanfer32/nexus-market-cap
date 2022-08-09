@@ -41,6 +41,7 @@ function DesktopNavbar() {
   )
 }
 
+// eslint-disable-next-line no-unused-vars
 function MobileNavbar() {
   return (
     <div>
