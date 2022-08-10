@@ -1,0 +1,44 @@
+@use '@styles/utils' as *;
+
+.bar {
+  position: relative;
+  display: flex;
+  color: theme(input-text);
+  background-color: theme(input-bg);
+  border: toRem(1px) solid theme(input-border);
+  border-radius: size(border-radius);
+  width: 100%;
+  &:focus-within {
+    outline: toRem(1px) auto clr(nexusBlue);
+    border-color: clr(nexusBlue);
+  }
+}
+
+.search {
+  width: 100%;
+  padding: calc(space(xxxs) + toRem(2px)) space(xxs);
+  border: none;
+  background: none;
+  color: theme(input-text);
+  &::-webkit-search-cancel-button {
+    display: none;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.icon {
+  background: none;
+  border: none;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: theme(input-text);
+  cursor: pointer;
+  &:focus {
+    outline: none;
+    color: clr(nexusBlue);
+  }
+}

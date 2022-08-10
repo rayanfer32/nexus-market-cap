@@ -4,7 +4,7 @@ import Custom404 from '@pages/404'
 import { isDev } from '@utils/getEnv'
 import DevView from '@views/DevView'
 import { useRouter } from 'next/router'
-import { Button, Input, ThemeToggle } from '@components/common'
+import { Button, Input, ThemeToggle, SearchBar } from '@components/common'
 import { Dropdown, NativeSelect } from '@components/common/Dropdown'
 import { BsFillEmojiHeartEyesFill } from 'react-icons/bs'
 import Image from 'next/image'
@@ -20,6 +20,7 @@ const DevPage: NextPage = () => {
           {/* Add your components inside these */}
           <Button />
           <Input />
+          <SearchBar placeholder={'Search...'} />
           <ThemeToggle />
           <Dropdown type="elevated" header={'Drop down menu'}>
             <p>Lorem ipsum dolor sit amet.</p>
