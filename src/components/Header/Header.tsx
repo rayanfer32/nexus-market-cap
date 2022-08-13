@@ -22,7 +22,7 @@ export default function Header({ isMobile }: HeaderProps) {
 
 function DesktopNavbar() {
   return (
-    <div className={styles.nav}>
+    <nav className={styles.nav}>
       <Brand />
       <menu style={{ display: 'flex', gap: '1rem' }}>
         <Link href="/">Tokens</Link>
@@ -44,7 +44,7 @@ function DesktopNavbar() {
         <input className="searchbar" type="search" placeholder="Search" />
         <ThemeToggle />
       </div>
-    </div>
+    </nav>
   )
 }
 
