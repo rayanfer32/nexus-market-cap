@@ -8,6 +8,7 @@ import { MenuPage } from '@components/common/Menu'
 import { setShowMenu } from '@store/slices/homepageSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '@store/store'
+import { IconContext } from 'react-icons'
 interface LayoutProps {
   children: ReactNode
 }
@@ -26,7 +27,7 @@ const Layout: NextComponentType<NextPageContext, {}, LayoutProps> = ({
   }
 
   return (
-    <>
+    <IconContext.Provider value={{ size: '1.5rem', className: 'icon' }}>
       {/* Need second opinion on section tag is it required or not */}
       <section className={styles.main}>
         <Header />
@@ -35,7 +36,7 @@ const Layout: NextComponentType<NextPageContext, {}, LayoutProps> = ({
       </section>
       <MenuPage show={showMenu} onClick={handleMenuClick} />
       <DevViewDebug />
-    </>
+    </IconContext.Provider>
   )
 }
 

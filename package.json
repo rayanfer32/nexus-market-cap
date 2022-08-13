@@ -1,5 +1,6 @@
 {
-  "name": "next-template-typscript",
+  "name": "nexus-market-cap",
+  "description": "A website to list all the tokens on nexus protocol chain.",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -31,6 +32,18 @@
       "prettier --write"
     ]
   },
+  "license": "MIT",
+  "keywords": [
+    "nexus",
+    "marketcap",
+    "nxs",
+    "blockchain",
+    "quantum resistance"
+  ],
+  "bugs": {
+    "url": "https://github.com/rayanfer32/nexus-market-cap/issues"
+  },
+  "homepage": "https://github.com/rayanfer32/nexus-market-cap",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.2",
     "axios": "^0.27.2",
