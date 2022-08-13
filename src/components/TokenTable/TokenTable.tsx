@@ -1,30 +1,11 @@
-import axios from 'axios'
 import React from 'react'
 import { useQuery } from 'react-query'
-import { SERVER_BASE_URL } from 'src/constants'
 import styles from './TokenTable.module.scss'
 import nexusTokenBgLight from '@assets/icons/TokenIconType1.svg'
 import Image from 'next/image'
 import { Button } from '@components/common/Button'
 import Table from '@components/Table/Table'
-interface tokenDataType {
-  id: number
-  attributes: {
-    ticker: string
-    createdAt: string
-    updatedAt: string
-    publishedAt: string
-    name: string
-    rank: number
-    icon: string
-    priceUSD: number
-    price24h: number
-    price7d: number
-    rating: number
-    maxsupply: number
-    currentsupply: number
-  }
-}
+import { fetchTokens } from 'src/fetch/fetch'
 
 const columns = [
   {
@@ -66,13 +47,8 @@ const columns = [
   },
 ]
 
-export default function TokenTable() {
-  const coinsRQ = useQuery(['coins'], async () => {
-    const { data } = (await axios.get(
-      `${SERVER_BASE_URL}/api/coins?pagination[start]=0&pagination[limit]=100`
-    )) as any
-    return data?.data as tokenDataType[]
-  })
+export default function TokenTable({ tokensData }: any) {
+  const coinsRQ = useQuery(['coins'], fetchTokens, { initialData: tokensData })
 
   if (coinsRQ.error) {
     return <div>error</div>
