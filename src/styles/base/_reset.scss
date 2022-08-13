@@ -9,6 +9,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'MavenPro', system-ui, -apple-system, sans-serif;
+  // font-weight: 500;
 }
 
 h1,
@@ -27,7 +28,7 @@ pre {
 }
 
 body {
-  font-size: clamp(0.92rem, 0.96rem + 0.18vw, 1rem);
+  font-size: clamp(1rem, 0.8rem + 0.18vw, 1.125rem);
   min-height: 100vh;
 }
 
