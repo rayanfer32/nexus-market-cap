@@ -1,6 +1,5 @@
 import React from 'react'
 import { BiMenu, BiSearch } from 'react-icons/bi'
-import { IconContext } from 'react-icons'
 import styles from './Header.module.scss'
 import Brand from '@components/common/Brand'
 import { setShowMenu } from '@store/slices/homepageSlice'
@@ -55,10 +54,8 @@ function MobileNavbar() {
       <nav className={styles.nav}>
         <Brand />
         <div className={styles.nav_buttons}>
-          <IconContext.Provider value={{ size: '1.5rem' }}>
-            <BiSearch />
-            <BiMenu onClick={() => dispatch(setShowMenu(true))} />
-          </IconContext.Provider>
+          <BiSearch />
+          <BiMenu onClick={() => dispatch(setShowMenu(true))} />
         </div>
       </nav>
     </div>

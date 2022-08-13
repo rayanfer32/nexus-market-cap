@@ -18,6 +18,7 @@
   transition: all 0.2s ease-in-out;
   display: flex;
   justify-content: space-between;
+  gap: toRem(2px);
   align-items: center;
   width: var(--header-width);
   cursor: pointer;
@@ -93,6 +94,11 @@
   color: theme(bg-primary);
   transition: transform 0.2s ease-in;
   &.active {
-    transform: rotate(-180deg);
+    &.rotate {
+      transform: rotate(-180deg);
+    }
+    &.flip {
+      transform: scale(-1);
+    }
   }
 }
