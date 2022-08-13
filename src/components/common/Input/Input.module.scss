@@ -1,0 +1,9 @@
+@use '@styles/utils' as *;
+
+.input {
+  color: theme(input-text);
+  background-color: theme(input-bg);
+  padding: calc(space(xxxs) + toRem(2px)) space(xxs);
+  border: toRem(1px) solid theme(input-border);
+  border-radius: size(border-radius);
+}

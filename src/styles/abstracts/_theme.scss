@@ -12,6 +12,9 @@ $themes: (
     button-text: clr(grey-1),
     button-bg-active: rgba(clr(grey-4), 0.9),
     hover-bg: rgba(clr(grey-4), 0.1),
+    input-bg: clr(white),
+    input-text: clr(midnightBlue),
+    input-border: clr(grey-3),
   ),
   dark: (
     bg-primary: clr(midnightBlue),
@@ -22,6 +25,9 @@ $themes: (
     button-text: clr(grey-1),
     button-bg-active: rgba(clr(midnightBlue), 0.9),
     hover-bg: rgba(clr(grey-4), 0.1),
+    input-bg: clr(midnightBlue),
+    input-text: clr(white),
+    input-border: clr(grey-1),
   ),
 );
 

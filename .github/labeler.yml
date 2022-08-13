@@ -9,6 +9,7 @@ documentation:
 
 pages:
   - src/pages/**/*
+  - all: ['!src/pages/__dev__/*', '!src/pages/__test__/*']
 
 'styles:global':
   - any: ['src/styles/**/*.scss', 'src/styles/*.scss']

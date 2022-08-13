@@ -23,6 +23,9 @@ export interface DropdownProps {
   width?: string
   height?: string
   headerWidth?: string
+  outsideClick?: boolean
+  arrowAlign?: 'left' | 'right'
+  arrowAnimate?: 'rotate' | 'flip' | 'none'
 }
 
 export const Dropdown = (props: DropdownProps) => {
@@ -34,17 +37,31 @@ export const Dropdown = (props: DropdownProps) => {
     width,
     height,
     headerWidth,
+    outsideClick = true,
+    arrowAlign = 'right',
+    arrowAnimate = 'rotate',
   } = props
   const ref = useRef<HTMLDivElement>(null)
   const [isDropdownShow, toggleDropdown] = useState(false)
 
-  useOnClickOutside(ref, () => toggleDropdown(false))
+  useOnClickOutside(ref, () => outsideClick && toggleDropdown(false))
 
   const style = {
     '--width': width,
     '--height': height,
     '--header-width': headerWidth,
   } as CSSProperties
+
+  const Arrow = (
+    <BsChevronDown
+      className={cls(
+        styles.icon,
+        isDropdownShow && styles.active,
+        styles[arrowAnimate]
+      )}
+      color="inherit"
+    />
+  )
 
   return (
     <div className={cls(styles.wrapper, className)} ref={ref} style={style}>
@@ -56,11 +73,9 @@ export const Dropdown = (props: DropdownProps) => {
         )}
         onClick={() => toggleDropdown((v) => !v)}
       >
+        {arrowAlign === 'left' && Arrow}
         <>{header}</>
-        <BsChevronDown
-          className={cls(styles.icon, isDropdownShow && styles.active)}
-          color="inherit"
-        />
+        {arrowAlign === 'right' && Arrow}
       </button>
       <div
         className={cls(
