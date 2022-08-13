@@ -5,14 +5,16 @@ import TokenTable from '@components/TokenTable'
 import styles from './Homepage.module.scss'
 import PageHeader from '@components/common/PageHeader/PageHeader'
 
-const Homepage: NextComponentType<NextPageContext> = () => {
+const Homepage: NextComponentType<NextPageContext> = (props) => {
+  // Logger.log('[HOMEPAGE] - props', props)
+
   return (
     <>
       <PageHeader page="home" />
       <div className={styles.container}>
         <TickerBar />
-        <Advertisement />
-        <TokenTable />
+        <Advertisement adsData={undefined} {...props} />
+        <TokenTable tokensData={undefined} {...props} />
       </div>
     </>
   )

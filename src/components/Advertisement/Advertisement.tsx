@@ -2,16 +2,13 @@ import React from 'react'
 import styles from './Advertisement.module.scss'
 import Image from 'next/image'
 import { SERVER_BASE_URL } from '@constants/index'
-import axios from 'axios'
 import { useQuery } from 'react-query'
+import { fetchAds } from 'src/fetch/fetch'
 
-export default function Advertisement() {
-  async function fetchAds() {
-    const { data } = await axios.get(`${SERVER_BASE_URL}/api/adcontents`)
-    return data.data
-  }
-
-  const { data } = useQuery(['ads'], fetchAds)
+export default function Advertisement({ adsData }: any) {
+  const { data } = useQuery(['ads'], fetchAds, {
+    initialData: adsData,
+  })
 
   return (
     <div className={styles.container}>
