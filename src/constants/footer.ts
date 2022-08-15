@@ -1,5 +1,4 @@
 import {
-  BsApple,
   BsBook,
   BsChatLeftText,
   BsDiscord,
@@ -9,11 +8,12 @@ import {
   BsReddit,
   BsTelegram,
   BsTwitter,
-  BsWallet2,
   BsYoutube,
 } from 'react-icons/bs'
-import { IoLogoGooglePlaystore } from 'react-icons/io5'
 import { SiGitbook } from 'react-icons/si'
+import NexusWallet from '@assets/icons/footer/app-store.svg'
+import Appstore from '@assets/icons/footer/nexus-wallet.svg'
+import Playstore from '@assets/icons/footer/playstore.svg'
 
 export const footer_items = {
   PRIMARY: {
@@ -54,6 +54,7 @@ export const footer_items = {
           target: '_blank',
           label: 'Telegram',
           icon: BsTelegram,
+          iconColor: '#229ED9',
         },
         {
           href: 'https://medium.com/@NexusOfficial',
@@ -66,30 +67,35 @@ export const footer_items = {
           target: '_blank',
           label: 'YouTube',
           icon: BsYoutube,
+          iconColor: 'red',
         },
         {
           href: 'https://t.me/nexusprice',
           target: '_blank',
           label: 'Price Talk',
           icon: BsChatLeftText,
+          iconColor: 'green',
         },
         {
           href: 'https://discord.gg/KNvxWh7t4E',
           target: '_blank',
           label: 'Discord',
           icon: BsDiscord,
+          iconColor: '#5865F2',
         },
         {
           href: 'https://twitter.com/NexusOfficial',
           target: '_blank',
           label: 'Twitter',
           icon: BsTwitter,
+          iconColor: '#1DA1F2',
         },
         {
           href: 'https://www.reddit.com/r/nexus_community/',
           target: '_blank',
           label: 'Reddit',
           icon: BsReddit,
+          iconColor: 'orangered',
         },
       ],
     },
@@ -100,19 +106,19 @@ export const footer_items = {
           href: 'https://nexus.io/wallets',
           target: '_blank',
           label: 'Desktop Wallet',
-          icon: BsWallet2,
+          icon: NexusWallet,
         },
         {
           href: 'https://play.google.com/store/apps/details?id=io.nexus.wallet',
           target: '_blank',
           label: 'Get it on Playstore',
-          icon: IoLogoGooglePlaystore,
+          icon: Playstore,
         },
         {
           href: 'https://testflight.apple.com/join/dJLBiKzt',
           target: '_blank',
           label: 'Download from IOS store',
-          icon: BsApple,
+          icon: Appstore,
         },
       ],
     },
