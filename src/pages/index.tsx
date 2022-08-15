@@ -3,7 +3,6 @@ import Homepage from 'src/views/Home'
 import Layout from '@views/Layout'
 import { fetchAds, fetchTokens } from 'src/fetch/fetch'
 import { REVALIDATE_INTERVALS } from '@constants/index'
-import Logger from '@utils/customLog'
 
 export async function getStaticProps() {
   const adsData = await fetchAds()
@@ -18,8 +17,6 @@ export async function getStaticProps() {
 }
 
 const Home: NextPage = (props) => {
-  Logger.log('[INDEX] - props', props)
-
   return (
     <Layout>
       <Homepage {...props} />
