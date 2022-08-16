@@ -72,7 +72,7 @@
   }
 }
 
-@media (max-width: 576px) {
+@include mq(small) {
   .footer {
     padding: space(s);
   }
