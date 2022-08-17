@@ -9,8 +9,8 @@
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
-  color: theme(text-primary);
-  background: theme(bg-primary);
+  color: var(--text-primary);
+  background: var(--bg-secondary);
   border-radius: 4px;
   box-shadow: var(--card-shadow);
   font-size: font-size(s);
@@ -24,8 +24,8 @@
 
 .thead > tr > th {
   padding: 0.6rem;
-  background: theme(bg-secondary);
-  color: theme(text-primary);
+  background: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 .th {
@@ -37,7 +37,7 @@
 }
 
 .tr {
-  border-top: 1px solid theme(bg-secondary);
+  border-top: 1px solid var(--bg-secondary);
 }
 
 .td {
@@ -64,7 +64,7 @@
 }
 
 .noRecords {
-  color: theme(text-primary);
+  color: var(--text-primary);
   display: flex;
   padding: 0.5rem 1rem;
   justify-content: center;
