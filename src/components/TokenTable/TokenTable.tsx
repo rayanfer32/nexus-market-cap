@@ -3,7 +3,6 @@ import { useQuery } from 'react-query'
 import styles from './TokenTable.module.scss'
 import nexusTokenBgLight from '@assets/icons/TokenIconType1.svg'
 import Image from 'next/image'
-import { Button } from '@components/common/Button'
 import Table from '@components/Table/Table'
 import { fetchTokens } from 'src/fetch/fetch'
 
