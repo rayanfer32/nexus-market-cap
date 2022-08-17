@@ -3,7 +3,6 @@ import { useQuery } from 'react-query'
 import styles from './TokenTable.module.scss'
 import nexusTokenBgLight from '@assets/icons/TokenIconType1.svg'
 import Image from 'next/image'
-import { Button } from '@components/common/Button'
 import Table from '@components/Table/Table'
 import { fetchTokens } from 'src/fetch/fetch'
 
@@ -56,7 +55,6 @@ export default function TokenTable({ tokensData }: any) {
 
   return (
     <div className={styles.container}>
-      <ActionBar />
       <Table columns={columns} data={coinsRQ?.data} />
     </div>
   )
@@ -81,12 +79,4 @@ function makeIcon(name: string): React.ReactElement {
 
 function removeLocalTag(name: string): string {
   return name?.replace('local:', '')
-}
-
-function ActionBar() {
-  return (
-    <div className="">
-      <Button>Lock</Button>
-    </div>
-  )
 }

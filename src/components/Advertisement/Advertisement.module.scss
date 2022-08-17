@@ -1,7 +1,9 @@
+@use '@styles/utils' as *;
+
 .container {
   // "h-56 bg-slate-200 flex place-content-center items-center
   display: flex;
-  background-color: #f5f5f5;
+  background-color: var(--adv-bg);
   justify-content: space-between;
   align-items: center;
   gap: 5rem;
