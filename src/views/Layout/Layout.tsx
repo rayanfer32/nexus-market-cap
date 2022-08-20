@@ -9,6 +9,9 @@ import { setShowMenu } from '@store/slices/homepageSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '@store/store'
 import { IconContext } from 'react-icons'
+import { Toaster } from '@modules/react-hot-toast'
+import { toastPosition } from '@constants/toasts'
+
 interface LayoutProps {
   children: ReactNode
 }
@@ -36,6 +39,7 @@ const Layout: NextComponentType<NextPageContext, {}, LayoutProps> = ({
       </section>
       <MenuPage show={showMenu} onClick={handleMenuClick} />
       <DevViewDebug />
+      <Toaster position={toastPosition.BOTTOM_RIGHT} reverseOrder={false} />
     </IconContext.Provider>
   )
 }

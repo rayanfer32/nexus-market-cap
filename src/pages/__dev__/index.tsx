@@ -9,16 +9,38 @@ import { Dropdown, NativeSelect } from '@components/common/Dropdown'
 import { BsFillEmojiHeartEyesFill } from 'react-icons/bs'
 import Image from 'next/image'
 import nexusBlue from '@assets/icons/nexusBlue.svg'
+import {
+  toast,
+  toastClose,
+  toastError,
+  toastSuccess,
+} from '@components/common/Toast'
 
 const DevPage: NextPage = () => {
   const { isProd: mockProd } = useRouter().query
+  const onToastClick = () => {
+    toast('Lorem ipsum, dolor sit amet consectetur adipisicing elit. At, ex!')
+    toast(
+      (t) => (
+        <div>
+          <h1>Hello World!</h1>
+          <button onClick={() => toastClose(t.id)}>Close</button>
+        </div>
+      ),
+      {
+        icon: <BsFillEmojiHeartEyesFill />,
+      }
+    )
+    toastSuccess('Hello World!')
+    toastError('Hello World!')
+  }
 
   if (isDev && !(mockProd === 'true')) {
     return (
       <Layout>
         <DevView>
           {/* Add your components inside these */}
-          <Button />
+          <Button onClick={onToastClick}>Toast Test</Button>
           <Input />
           <SearchBar placeholder={'Search...'} />
           <ThemeToggle />
