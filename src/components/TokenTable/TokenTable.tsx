@@ -1,10 +1,10 @@
 import React from 'react'
 import { useQuery } from 'react-query'
 import styles from './TokenTable.module.scss'
-import nexusTokenBgLight from '@assets/icons/TokenIconType1.svg'
-import Image from 'next/image'
 import Table from '@components/Table/Table'
 import { fetchTokens } from 'src/fetch/fetch'
+import Link from 'next/link'
+import { TokenIcon } from '@components/TokenIcon/TokenIcon'
 
 const columns = [
   {
@@ -15,9 +15,15 @@ const columns = [
     Header: 'Token',
     accessor: 'attributes.name',
     Cell: ({ value }: { value: string }) => (
-      <td>
-        {value ? makeIcon(removeLocalTag(value)) : value.substring(0, 10)}
-      </td>
+      <Link href={`/token/${removeLocalTag(value)}`}>
+        <a>
+          {value ? (
+            <TokenIcon name={removeLocalTag(value)} />
+          ) : (
+            value.substring(0, 10)
+          )}
+        </a>
+      </Link>
     ),
   },
   {
@@ -57,23 +63,6 @@ export default function TokenTable({ tokensData }: any) {
   return (
     <div className={styles.container}>
       <Table columns={columns} data={coinsRQ?.data} />
-    </div>
-  )
-}
-
-function makeIcon(name: string): React.ReactElement {
-  return (
-    <div className={styles.token_container}>
-      <div className={styles.icon_container}>
-        <Image
-          height={40}
-          width={40}
-          src={nexusTokenBgLight}
-          alt="token-logo"
-        ></Image>
-        <div className={styles.icon_name}>{name?.substring(0, 2)}</div>
-      </div>
-      <span>{name}</span>
     </div>
   )
 }

@@ -19,6 +19,7 @@ export function useDarkMode() {
       const element = document.querySelector('body')
       if (element) {
         element.setAttribute(attribute, enabledState)
+        element.setAttribute('data-theme', enabledState) // for tailwind/daisyui theme
       }
     },
     [enabledState]
