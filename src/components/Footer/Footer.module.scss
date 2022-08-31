@@ -1,10 +1,11 @@
 @use '@styles/utils' as *;
 
 .footer {
-  background-color: var(--bg-secondary);
+  background: theme(footer-bg);
   color: var(--text-primary);
   padding: space(xl);
   gap: 1rem;
+  box-shadow: theme(card-shadow-l);
 
   .section1 {
     display: flex;

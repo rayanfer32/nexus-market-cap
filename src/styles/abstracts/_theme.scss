@@ -6,6 +6,7 @@ $themes: (
   light: (
     bg-primary: clr(white),
     bg-secondary: clr(grey-1),
+    bg-tertiary: linear-gradient(0deg, clr(grey-1), clr(white)),
     text-primary: clr(midnightBlue),
     text-secondary: clr(oceanBlue),
     button-bg: clr(grey-4),
@@ -16,10 +17,15 @@ $themes: (
     input-text: clr(midnightBlue),
     input-border: clr(grey-3),
     adv-bg: #f5f5f5,
+    card-shadow-s: 0 0 4px rgba(clr(grey-4), 0.3),
+    card-shadow-m: 0 0 8px rgba(clr(grey-4), 0.3),
+    card-shadow-l: 0 0 12px rgba(clr(grey-4), 0.3),
+    footer-bg: linear-gradient(0deg, clr(grey-1), clr(white)),
   ),
   dark: (
     bg-primary: clr(midnightBlue),
     bg-secondary: clr(prussianBlue),
+    bg-tertiary: linear-gradient(180deg, clr(grey-6), clr(prussianBlue)),
     text-primary: clr(white),
     text-secondary: clr(grey-1),
     button-bg: clr(midnightBlue),
@@ -30,6 +36,10 @@ $themes: (
     input-text: clr(white),
     input-border: clr(grey-1),
     adv-bg: #2e2e2e,
+    card-shadow-s: 0 0 4px clr(grey-5),
+    card-shadow-m: 0 0 8px clr(grey-5),
+    card-shadow-l: 0 0 12px clr(grey-5),
+    footer-bg: linear-gradient(0deg, clr(grey-7), clr(prussianBlue)),
   ),
 );
 

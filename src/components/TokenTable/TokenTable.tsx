@@ -23,6 +23,7 @@ const columns = [
   {
     Header: 'Price',
     accessor: 'attributes.priceUSD',
+    Cell: () => <div className="badge badge-secondary">Coming soon</div>,
   },
   {
     Header: '24h',

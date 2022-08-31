@@ -23,31 +23,35 @@ interface AdCardProps {
   title: string
   desc: string
   image: string
+  link: string
 }
 
-function AdCard({ title, desc, image, ...rest }: AdCardProps) {
+function AdCard({ title, desc, image, link }: AdCardProps) {
   let imageUrl = image
   if (image.startsWith('/uploads')) {
     imageUrl = `${SERVER_BASE_URL}${image}`
   }
 
   return (
-    <div className={styles.card} {...rest}>
-      <span className={styles.card_title}>{title}</span>
-      <div className={styles.card_body}>
-        <div className={styles.image_container}>
-          <Image
-            className={styles.card_body_image}
-            src={imageUrl}
-            alt={image}
-            width={640}
-            height={360}
-            sizes="50vw"
-            objectFit="cover"
-          />
-        </div>
-        <span className={styles.card_body_desc}>{desc}</span>
+    <div className="">
+      <div className="w-64 overflow-hidden rounded-lg group-hover:opacity-75 shadow">
+        <Image
+          // className={styles.card_body_image}
+          src={imageUrl}
+          alt={image}
+          width={640}
+          height={360}
+          // sizes="50vw"
+          objectFit="cover"
+        />
       </div>
+      <h3 className="mt-6 text-sm">
+        <p className="text-base font-semibold">{title}</p>
+        <a href={link}>
+          <span className="absolute inset-0"></span>
+          {desc}
+        </a>
+      </h3>
     </div>
   )
 }
