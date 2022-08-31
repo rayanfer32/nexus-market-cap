@@ -33,7 +33,7 @@ function AdCard({ title, desc, image, link }: AdCardProps) {
   }
 
   return (
-    <div className="">
+    <div className="group relative">
       <div className="w-64 overflow-hidden rounded-lg group-hover:opacity-75 shadow">
         <Image
           // className={styles.card_body_image}
@@ -45,7 +45,7 @@ function AdCard({ title, desc, image, link }: AdCardProps) {
           objectFit="cover"
         />
       </div>
-      <h3 className="mt-6 text-sm">
+      <h3 className="mt-2 text-sm">
         <p className="text-base font-semibold">{title}</p>
         <a href={link}>
           <span className="absolute inset-0"></span>
