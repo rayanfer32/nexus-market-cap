@@ -1,4 +1,4 @@
-import { Dropdown } from '@components/common'
+import { Button, Dropdown } from '@components/common'
 import { TokenIcon } from '@components/TokenIcon/TokenIcon'
 import Layout from '@views/Layout'
 import { useRouter } from 'next/router'
@@ -21,19 +21,18 @@ export default function TokenDetail() {
           <section className="p-4 shadow">
             <div className="flex place-items-center gap-4">
               <TokenIcon name={tokenName} />
-              <h3 className="font-bold">{ticker}</h3>
-              <Rating />
-              <div className="w-24">
-                <Dropdown type="elevated" header={'USD'}>
-                  <p>USD</p>
-                  <p>INR</p>
-                  <p>EUR</p>
-                </Dropdown>
+              <h3 className="font-bold badge badge-secondary">{ticker}</h3>
+              <div>
+                <h2>Price</h2>
+                <div className="flex">
+                  <h2 className="font-bold text-xl">32.2 NXS</h2>
+                  <p className="font-bold text-xl mx-2"> ≈ </p>
+                  <h2 className="font-bold text-xl">1.2 USD</h2>
+                </div>
               </div>
+              <Rating />
             </div>
-            <button className="badge badge-outline badge-primary">
-              Add Review
-            </button>
+            <Button className="badge badge-secondary">Add Review</Button>
           </section>
 
           <section className="flex">
