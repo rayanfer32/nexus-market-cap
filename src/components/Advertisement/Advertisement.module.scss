@@ -3,13 +3,19 @@
 .container {
   // "h-56 bg-slate-200 flex place-content-center items-center
   display: flex;
-  background-color: var(--adv-bg);
+  background: theme(bg-tertiary);
+  color: theme(text-primary);
   justify-content: space-between;
   align-items: center;
   gap: 5rem;
   overflow: auto hidden;
   padding: 1rem 1rem;
 }
+
+// .image_container {
+//   max-width: 5rem;
+//   max-height: 4rem;
+// }
 
 .card {
   // "h-56 bg-slate-200 flex place-content-center items-center

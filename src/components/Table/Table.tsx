@@ -52,15 +52,7 @@ export default function Table({
     setPageSize,
     pageIndex,
     pageSize,
-    handleStartOfPageClick: () => gotoPage(0),
-    handlePreviousPageClick: () => previousPage(),
-    handleNextPageClick: () => nextPage(),
-    handleEndOfPageClick: () => gotoPage(pageCount - 1),
   }
-
-  // if (data?.length === 0) {
-  //   return <div className={styles.tableContainer}>No Records</div>;
-  // }
 
   return (
     // apply the table props
@@ -93,11 +85,8 @@ export default function Table({
                           column.render('Header')
                         }
                         <span>
-                          {column.isSorted
-                            ? column.isSortedDesc
-                              ? ' 🔽'
-                              : ' 🔼'
-                            : ''}
+                          {column.isSorted &&
+                            (column.isSortedDesc ? ' 🔽' : ' 🔼')}
                         </span>
                       </th>
                     ))
