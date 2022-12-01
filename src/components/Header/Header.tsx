@@ -5,7 +5,7 @@ import Brand from '@components/common/Brand'
 import { setShowMenu } from '@store/slices/homepageSlice'
 import { dispatch } from '@store/store'
 import { Dropdown } from '@components/common/Dropdown'
-import { ThemeToggle } from '@components/common'
+import { SearchBar, ThemeToggle } from '@components/common'
 import Link from 'next/link'
 
 export interface HeaderProps {
@@ -23,24 +23,30 @@ function DesktopNavbar() {
   return (
     <div className={styles.nav}>
       <Brand />
-      <menu style={{ display: 'flex', gap: '1rem' }}>
+      <menu className="flex gap-2">
         <Link href="/">Tokens</Link>
         <Link href="/exchanges">Exchanges</Link>
         <Link href="/community">Community</Link>
         <Link href="/learn">Learn</Link>
       </menu>
-      <div style={{ display: 'flex' }}>
-        <Dropdown type="elevated" header={'English'}>
-          <p>English</p>
-          <p>Spanish</p>
-          <p>Dutch</p>
-        </Dropdown>
-        <Dropdown type="elevated" header={'USD'}>
-          <p>USD</p>
-          <p>INR</p>
-          <p>EUR</p>
-        </Dropdown>
-        <input className="searchbar" type="search" placeholder="Search" />
+      <div className="flex gap-1 items-center">
+        <div className="w-20">
+          <Dropdown type="elevated" header={'English'}>
+            <p>English</p>
+            <p>Spanish</p>
+            <p>Dutch</p>
+          </Dropdown>
+        </div>
+        <div className="w-20">
+          <Dropdown type="elevated" header={'USD'}>
+            <p>USD</p>
+            <p>INR</p>
+            <p>EUR</p>
+          </Dropdown>
+        </div>
+        <div className="w-30 h-9">
+          <SearchBar />
+        </div>
         <ThemeToggle />
       </div>
     </div>

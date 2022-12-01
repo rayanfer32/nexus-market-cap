@@ -7,7 +7,11 @@ $clr: (
   midnightBlue: #012235,
   oxfordBlue: #011b35,
   prussianBlue: #000e16,
+  frostWhite: #dcecf4,
 
+  // gradients
+  linearFrostWhite:
+    linear-gradient(180deg, var(--white) 0%, clr(frostWhite) 100%),
   // grey shades
   grey-1: #e3e7eb,
   grey-2: #d9d9d9,
@@ -19,7 +23,7 @@ $clr: (
 
   black: #000000,
 
-  // tirtiary colors
+  // tertiary colors
   lime-green: #15e015,
   medium-spring: #15e081,
   dark-turquoise: #15d2e0,
