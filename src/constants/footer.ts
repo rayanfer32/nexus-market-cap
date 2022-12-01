@@ -11,8 +11,8 @@ import {
   BsYoutube,
 } from 'react-icons/bs'
 import { SiGitbook } from 'react-icons/si'
-import NexusWallet from '@assets/icons/footer/app-store.svg'
-import Appstore from '@assets/icons/footer/nexus-wallet.svg'
+import Appstore from '@assets/icons/footer/app-store.svg'
+import NexusWallet from '@assets/icons/footer/nexus-wallet.svg'
 import Playstore from '@assets/icons/footer/playstore.svg'
 
 export const footer_items = {
