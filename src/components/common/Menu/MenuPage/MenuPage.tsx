@@ -1,23 +1,13 @@
-import { cls } from '@utils/classnames'
-import { MouseEventHandler } from 'react'
-import styles from './MenuPage.module.scss'
+import { bgOverlay } from '@components/HOC'
 
-interface MenuPageProps {
-  show: boolean
-  onClick?: MouseEventHandler<HTMLElement>
-}
+// interface MenuPageProps {}
 
-export const MenuPage = ({ show, onClick }: MenuPageProps) => {
+const _MenuPage = () => {
   return (
     <>
-      {
-        <section
-          className={cls(styles.menuPage, show ? styles.show : styles.hide)}
-          onClick={onClick}
-        >
-          Menu Page
-        </section>
-      }
+      <h1>Menu Page</h1>
     </>
   )
 }
+
+export const MenuPage = bgOverlay(_MenuPage)

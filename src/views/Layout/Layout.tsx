@@ -37,7 +37,7 @@ const Layout: NextComponentType<NextPageContext, {}, LayoutProps> = ({
         <main className={styles.container}>{children}</main>
         <Footer />
       </section>
-      <MenuPage show={showMenu} onClick={handleMenuClick} />
+      <MenuPage showOverlay={showMenu} onOverlayClick={handleMenuClick} />
       <DevViewDebug />
       <Toaster position={toastPosition.BOTTOM_RIGHT} reverseOrder={false} />
     </IconContext.Provider>
